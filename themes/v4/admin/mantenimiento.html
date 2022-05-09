@@ -1,0 +1,102 @@
+            <div class="col-md-10">
+                <form method="post">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Configuraciones de mantenimiento<i class="mpIcon viewed right"></i></div>
+                    <div class="panel-body">
+                        {if="isset($saved)"}
+                        <div class="no-comments-voidloop">
+                            Debes reabrir la ventana para que el nucleo del sistema cargue las nuevas constantes.
+                        </div>
+                        {else}
+                      <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Opcion</th>
+                                <th>Valor</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mantenimiento</td><td><input type="checkbox" class="switchable" name="mantenimiento" {if="MANTENIMIENTO_GENERAL"}checked="checked"{/if}/></td><td>¿Activar mantenimiento en todo el sitio?</td>
+                            </tr>
+                            <tr>
+                                <td>Mensaje</td><td><textarea name="msg">{#CLOSED_MESSAGE#}</textarea></td><td>Si el mantenimiento se encuentra activado, se mostrará éste mensaje</td>
+                            </tr>
+                            <tr>
+                                <td>Activar registro</td><td><input type="checkbox" class="switchable" name="registro" {if="SECCION_REGISTRO"}checked="checked"{/if}/></td><td>Permitir registrarse a los usuarios</td>
+                            </tr>
+                            <tr>
+                                <td>Login</td><td><input type="checkbox" class="switchable" name="login" {if="SECCION_LOGIN"}checked="checked"{/if}/></td><td>Permitir ingresar a los usuarios (si esta off solo usuarios que ya hayan ingresado podran usar su cuenta, si se desloguean ya no podran volver a ingresar)</td>
+                            </tr>
+                            <tr>
+                                <td>Nobatos</td><td><input type="checkbox" class="switchable" name="nubs" {if="SECCION_NOBS"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Top</td><td><input type="checkbox" class="switchable" name="top" {if="SECCION_TOP"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Buscador</td><td><input type="checkbox" class="switchable" name="buscador" {if="SECCION_BUSCADOR"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Mensajes Privados</td><td><input type="checkbox" class="switchable" name="mps" {if="SECCION_MPS"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Perfil</td><td><input type="checkbox" class="switchable" name="perfil" {if="SECCION_PERFIL"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Crear Post</td><td><input type="checkbox" class="switchable" name="newpost" {if="SECCION_AGREGAR_POST"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Notas de version</td><td><input type="checkbox" class="switchable" name="notasVersion" {if="SECCION_NOTAS_VERSION"}checked="checked"{/if}/></td><td>Muestra la pestaña y sección de notas de la versión</td>
+                            </tr>
+                            <tr>
+                                <td>Notificaciones</td><td><input type="checkbox" class="switchable" name="notificaciones" {if="SECCION_NOTIFICACIONES"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Categorias</td><td><input type="checkbox" class="switchable" name="categorias" {if="SECCION_CATEGORIAS"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Favoritos</td><td><input type="checkbox" class="switchable" name="favoritos" {if="SECCION_FAVORITOS"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Historial</td><td><input type="checkbox" class="switchable" name="history" {if="SECCION_HISTORY"}checked="checked"{/if} /></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Estado del servicio</td><td><input type="checkbox" class="switchable" name="serviceStatus" {if="SECCION_STATUS"}checked="checked"{/if}/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Borradores</td><td><input type="checkbox" class="switchable" name="borradores" {if="SECCION_BORRADORES"}checked="checked"{/if}/></td><td>Si esto es desactivado los usuarios no podrán crear borradores ni ver la sección de borradores.</td>
+                            </tr>
+                            <tr>
+                                <td>Control</td><td><input type="checkbox" class="switchable" name="control" {if="SECCION_BORRADORES"}checked="checked"{/if}/></td><td>Si esto es desactivado los usuarios no podrán crear borradores ni ver la sección de borradores.</td>
+                            </tr>
+                            <tr>
+                                <td>Puntos</td><td><input type="checkbox" class="switchable" name="puntos" {if="SYSTEM_PUNTOS"}checked="checked"{/if}/></td><td>Sistema de puntos de posts.</td>
+                            </tr>
+                            <tr>
+                                <td>Seguidores</td><td><input type="checkbox" class="switchable" name="seguidores" {if="SYSTEM_SEGUIDORES"}checked="checked"{/if}/></td><td>Sistema de seguidores de usuarios.</td>
+                            </tr>
+                            <tr>
+                                <td>Comentarios</td><td><input type="checkbox" class="switchable" name="comentarios" {if="SYSTEM_COMENTARIOS"}checked="checked"{/if}/></td><td>Si esto es desactivado no se podran ver los comentarios existentes ni crear nuevos comentarios</td>
+                            </tr>
+                            <tr>
+                                <td>Crear comentarios</td><td><input type="checkbox" class="switchable" name="comentariosNew" {if="SYSTEM_COMENTARIOS_NEW"}checked="checked"{/if}/></td><td>Si esto es desactivado no se podran agregar nuevos comentarios</td>
+                            </tr>
+                            <tr>
+                                <td>Reportes</td><td><input type="checkbox" class="switchable" name="reportes" {if="SYSTEM_REPORTES"}checked="checked"{/if}/></td><td>Si esto es desactivado no se podran reportar usuarios, mps, catalogos ni post.</td>
+                            </tr>
+                            <tr>
+                                <td>Cron</td><td><input type="checkbox" class="switchable" name="cron" {if="CRON_CORE"}checked="checked"{/if}/></td><td>Si esto es desactivado los procesos del cron serán ignorados.</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      {/if}
+                    <hr />
+                      <input type="password" name="adminPass" placeholder="Global Kernell Password" /> <b>** OBLIGATORIO</b><button type="submit" class="btn btn-verde pull-right" style="display: inline-block;">Guardar</button>
+                    </div>
+                </div>
+                </form>
+              </div>
+            
+            </div>

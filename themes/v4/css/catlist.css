@@ -1,0 +1,213 @@
+.catl2{
+    padding-left: 25px;
+    background: url(../images/caticons.png) no-repeat 5px 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.categoria{
+    margin-right: 5px;
+    background: url(../images/caticons.png) no-repeat 5px 5px;
+    width: 23px;
+    height: 21px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -5px;
+}
+.categoria.new-peli
+{
+    background: url(../images/newcategory/peli.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.categoria.new-peli-descarga
+{
+    background: url(../images/newcategory/peli-descarga.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.categoria.new-windows
+{
+    background: url(../images/newcategory/windows.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.categoria.new-script-clones
+{
+    background: url(../images/newcategory/scripts.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.categoria.new-anime
+{
+    background: url(../images/newcategory/anime.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.categoria.new-recursos
+{
+    background: url(../images/newcategory/recursos.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.categoria.new-series
+{
+    background: url(../images/newcategory/series.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+
+.catl2.new-peli
+{
+    background: url(../images/newcategory/peli.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.new-peli-descarga
+{
+    background: url(../images/newcategory/peli-descarga.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.new-windows
+{
+    background: url(../images/newcategory/windows.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.new-script-clones
+{
+    background: url(../images/newcategory/scripts.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.new-anime
+{
+    background: url(../images/newcategory/anime.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.new-recursos
+{
+    background: url(../images/newcategory/recursos.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.new-series
+{
+    background: url(../images/newcategory/series.png) no-repeat;
+    background-size: 16px 16px;
+    background-position: 5px 5px;
+}
+.catl2.flash, .categoria.flash
+{
+    background-position: 5px -173px;
+}
+.catl2.arte, .categoria.arte{
+    background-position: 5px -129px;
+}
+.catl2.autosymotos, .categoria.autosymotos{
+    background-position: 5px -744px
+}
+.catl2.comics, .categoria.comics{
+    background-position: 5px -634px;
+}
+.catl2.celulares, .categoria.celulares{
+    background-position: 5px -595px;
+}
+.catl2.cienciayeducacion, .categoria.cienciayeducacion{
+    background-position: 5px -956px;
+}
+.catl2.deportes, .categoria.deportes{
+    background-position: 5px -569px;
+}
+.catl2.descargas, .categoria.descargas{
+    background-position: 5px -215px;
+}
+.catl2.ecologia, .categoria.ecologia{
+    background-position: 5px -458px;
+}
+.catl2.links, .categoria.links{
+    background-position: 5px -84px;
+}
+.catl2.femme, .categoria.femme{
+    background-position: 5px -724px;
+}
+.catl2.imagenes, .categoria.imagenes{
+    background-position: 5px -62px;
+}
+.catl2.doityourself, .categoria.doityourself{
+    background-position: 5px -933px;
+}
+.catl2.gay, .categoria.gay{
+    background-position: 5px -503px;
+}
+.catl2.humor, .categoria.humor{
+    background-position: 5px -765px;
+}
+.catl2.info, .categoria.info{
+    background-position: 5px -282px;
+}
+.catl2.juegos, .categoria.juegos{
+    background-position: 5px -40px;
+}
+.catl2.juegosonline, .categoria.juegosonline{
+    background-position: 5px -1053px;
+}
+.catl2.linux, .categoria.linux{
+    background-position: 5px -546px;
+}
+.catl2.musica, .categoria.musica{
+    background-position: 5px -194px;
+}
+.catl2.mac, .categoria.mac{
+    background-position: 5px -701px;
+}
+.catl2.mangayanime, .categoria.mangayanime{
+    background-position: 5px -909px;
+}
+.catl2.mascotas, .categoria.mascotas{
+    background-position: 5px -864px;
+}
+.catl2.monografias, .categoria.monografias{
+    background-position: 5px -371px;
+}
+.catl2.negociosyeconomia, .categoria.negociosyeconomia{
+    background-position: 5px -845px;
+}
+.catl2.noticias, .categoria.noticias{
+    background-position: 5px -239px;
+}
+.catl2.offtopic, .categoria.offtopic{
+    background-position: 5px -151px;
+}
+.catl2.paranormal, .categoria.paranormal{
+    background-position: 5px -1002px;
+}
+.catl2.recetas, .categoria.recetas{
+    background-position: 5px -678px;
+}
+.catl2.reviews, .categoria.reviews{
+    background-position: 5px -1027px;
+}
+.catl2.saludybienestar, .categoria.saludybienestar{
+    background-position: 5px -808px;
+}
+.catl2.solidaridad, .categoria.solidaridad{
+    background-position: 5px -657px;
+}
+.catl2.turismo, .categoria.turismo{
+    background-position: 5px -888px;
+}
+.catl2.tutoriales, .categoria.tutoriales{
+    background-position: 5px -787px;
+}
+.catl2.tvpeliculasyseries, .categoria.tvpeliculasyseries{
+    background-position: 5px -303px;
+}
+.catl2.videos, .categoria.videos{
+    background-position: 5px -107px;
+}
+.catl2.linkeros, .categoria.linkeros{
+    background: url(../favicon.ico) no-repeat 5px 5px;
+    background-position: 5px;
+}

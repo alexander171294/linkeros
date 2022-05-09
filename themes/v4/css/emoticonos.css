@@ -1,0 +1,57 @@
+.emoticono {
+    background: url(../images/icons3.gif) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 7px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.emoticono.smiley{
+    background-position: 0 -287px;
+}
+.emoticono.wink{
+    background-position: 0 -309px;
+}
+.emoticono.usuk{
+    background-position: 0 -331px;
+}
+.emoticono.tongue{
+    background-position: 0 -353px;
+}
+.emoticono.happy{
+    background-position: 0 -375px;
+}
+.emoticono.sad{
+    background-position: 0 -397px;
+}
+.emoticono.rage{
+    background-position: 0 -419px;
+}
+.emoticono.cry{
+    background-position: 0 -441px;
+}
+.emoticono.iwannafku{
+    background-position: 0 -463px;
+}
+.emoticono.urstupid{
+    background-position: 0 -485px;
+}
+.emoticono.what{
+    background-position: 0 -507px;
+}
+.emoticono.imsexy{
+    background-position: 0 -529px;
+}
+.emoticono.green{
+    background-position: 0 -573px;
+}
+.emoticono.ohcrap{
+    background-position: 0 -551px;
+}
+.emoticono.awesome{
+    background-position: 0 -595px;
+}
+.emoticono.bigboobs{
+    background-position: 0 -617px;
+}

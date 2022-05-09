@@ -1,0 +1,16 @@
+            <div class="row">
+              
+              <div class="col-md-2">
+                <div class="panel panel-grey">
+                  <div class="panel-heading panelImportantRecolor">Opciones</div>
+                  <div class="panel-body">
+                    <label>Ver mensajes:</label>
+                    <ul class="periodo-ul">
+                      <li {if="$triseccion == 1"}class="active"{/if}><a href="/borradores" style="{if="$triseccion == 1"}color:white;{else}color:#0f0fb4;{/if} text-decoration: none;">Borradores</a></li>
+                      <!--<li {if="$triseccion == 3"}class="active"{/if}><a href="/borradores/publicados" style="{if="$triseccion == 3"}color:white;{else}color:#0f0fb4;{/if} text-decoration: none;">Post publicados</a></li>-->
+                      <li><hr /></li>
+                      <li {if="$triseccion == 2"}class="active"{/if}><a href="/borradores/revision" style="{if="$triseccion == 2"}color:white;{else}color:#0f0fb4;{/if} text-decoration: none;">Post en revision</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>

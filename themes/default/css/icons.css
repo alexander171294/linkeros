@@ -1,0 +1,572 @@
+.specIcons
+{
+    background: url(../images/notis-sprite.png) no-repeat;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+.specIcons.newPost{
+    background-position: 0 -78px;
+}
+
+.icon{
+    background: url(../images/icons1.png) no-repeat;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+.icon.refresh{
+    background-position: 0 -1000px;
+}
+.icon.next{
+    background-position: 0 -23px;
+}
+.icon.closereg{
+    background: url(../images/mdclose.png) no-repeat;
+    margin-top: 2px;
+}
+.icon.tag{
+    background-position: 0 -1344px;
+}
+.icon.seguir{
+    background-position: 0 -1365px;
+}
+.icon.denunciar{
+    background-position: 0 -265px;
+}
+button:hover .icon.denunciar, .icon.denunciar.active{
+    background-position: 0 -836px;
+}
+.icon.favorito{
+    background-position: 0 -244px;
+}
+button:hover .icon.favorito, .icon.favorito.active{
+    background-position: 0 -67px;
+}
+.icon.offline{
+    background-position: 0 -813px;
+}
+.icon.online{
+    background-position: 0 -791px;
+}
+.icon.male{
+    background-position: 0 -132px;
+}
+.icon.female{
+    background-position: 0 -153px;
+}
+.icon.msg{
+    background-position: 0 -221px;
+}
+.icon.seguidores{
+    background-position: 0 -928px;
+}
+.icon.puntos{
+    background-position: 0 -42px;
+}
+.icon.visitas{
+    background-position: 0 -89px;
+}
+.icon.favoritos{
+    background-position: 0 -945px;
+}
+.icon.comentarios{
+    background-position: 0 -1297px;
+}
+.icon.draft{
+    background-position: 0 -1470px;
+}
+.icon.editprofile{
+    background-position: 0 -873px;
+}
+.icon.logout{
+    background-position: 0 -982px;
+}
+.icon.history{
+    background-position: 0 -1252px;
+}
+.icon.no-seguir{
+    background-position: 0 -1384px;
+}
+.icon.working{
+    background-position: 0 -1402px;
+}
+.icon.spinner{
+    background: url(../images/spinner.gif) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.icon.puntuar{
+    background-position: 0 -1180px;
+}
+
+.iCatlg
+{
+    display: block;
+    width: 30px;
+    height: 20px;
+}
+.iCatlgQ
+{
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+.iCatlg.es
+{
+    background: url(../images/catalogo/es.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlg.jp
+{
+    background: url(../images/catalogo/jp.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+    background-size: contain;
+}
+.iCatlg.jpsub
+{
+    background: url(../images/catalogo/jpsub.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+    background-size: contain;
+}
+.iCatlg.br
+{
+    background: url(../images/catalogo/br.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+    background-size: contain;
+}
+.iCatlg.la
+{
+    background: url(../images/catalogo/la.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlg.vos
+{
+    background: url(../images/catalogo/vos.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlg.en
+{
+    background: url(../images/catalogo/en.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+    background-size: contain;
+}
+.iCatlg.other
+{
+    background: url(../images/catalogo/others.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+    background-size: contain;
+}
+
+.iCatlgQ.p1080
+{
+    background: url(../images/catalogo/1080.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.p720
+{
+    background: url(../images/catalogo/720.png) no-repeat;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.p480
+{
+    background: url(../images/catalogo/480.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+
+.iCatlgQ.dvdrip
+{
+    background: url(../images/catalogo/dvdrip.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.dvd-r
+{
+    background: url(../images/catalogo/dvdr.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.dvdscr
+{
+    background: url(../images/catalogo/dvd-scr.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.htdv
+{
+    background: url(../images/catalogo/htdv.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.tvrip
+{
+    background: url(../images/catalogo/tvrip.png) no-repeat;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px white;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.cam
+{
+    background: url(../images/catalogo/cam.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.telesync
+{
+    background: url(../images/catalogo/telesync.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.telecine
+{
+    background: url(../images/catalogo/telecine.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.screener
+{
+    background: url(../images/catalogo/screener.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.r5
+{
+    background: url(../images/catalogo/r5.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.pdtv
+{
+    background: url(../images/catalogo/pdtv.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.lower
+{
+    background: url(../images/catalogo/lower.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.higgest
+{
+    background-color: #ffff85;
+    border-radius: 5px;
+    background: url(../images/catalogo/higgest.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.demo
+{
+    background: url(../images/catalogo/demo.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.full
+{
+    background: url(../images/catalogo/full.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.ripped
+{
+    background: url(../images/catalogo/ripped.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.portable
+{
+    background: url(../images/catalogo/portable.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.repack
+{
+    background: url(../images/catalogo/repack.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.remaster
+{
+    background: url(../images/catalogo/remaster.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.freeware
+{
+    background: url(../images/catalogo/freeware.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.abandonware
+{
+    background: url(../images/catalogo/abandonware.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.nintendo64
+{
+    background: url(../images/catalogo/nintendo64.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.playstation
+{
+    background: url(../images/catalogo/playstation.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.play2
+{
+    background: url(../images/catalogo/play2.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.xbox
+{
+    background: url(../images/catalogo/xbox.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.gamecube
+{
+    background: url(../images/catalogo/gamecube.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.wii
+{
+    background: url(../images/catalogo/wii.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.xbox360
+{
+    background: url(../images/catalogo/xbox360.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.play3
+{
+    background: url(../images/catalogo/play3.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.play4
+{
+    background: url(../images/catalogo/play4.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.xbox-one
+{
+    background: url(../images/catalogo/xbox-one.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.wiiu
+{
+    background: url(../images/catalogo/wiiu.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.social
+{
+    background: url(../images/catalogo/social.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.herramientas
+{
+    background: url(../images/catalogo/herramientas.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.juegos
+{
+    background: url(../images/catalogo/juegos.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+
+.iCatlgQ.presentation
+{
+    background: url(../images/catalogo/presentation.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.introductorio
+{
+    background: url(../images/catalogo/introductorio.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.normal
+{
+    background: url(../images/catalogo/normal.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.medio
+{
+    background: url(../images/catalogo/medio.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.avanzado
+{
+    background: url(../images/catalogo/avanzado.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+.iCatlgQ.pack
+{
+    background: url(../images/catalogo/pack.png) no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    margin: 0px;
+}
+
+/* NOTI ICONS **/
+.note-icons{
+    background: url(../images/notis-sprite.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+.note-icons.puntos{
+    background-position: 0 -105px;
+}
+.note-icons.listado{
+    background-position: 0 -324px;
+}
+
+
+/** moderation icon */
+.moderate.delete{
+    background: url(../images/close.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.moderate.edit{
+    background: url(../images/edit.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.moderate.sticky{
+    background: url(../images/sticky.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.iconMSG{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.iconMSG.recibidos{
+    background: url(../images/mps/recibidos.png) no-repeat;
+}
+.iconMSG.enviados{
+    background: url(../images/mps/enviados.png) no-repeat;
+}
+.iconMSG.vaciar{
+    background: url(../images/mps/vaciar.png) no-repeat;
+}
+.iconMSG.nuevo{
+    background: url(../images/mps/nuevo.png) no-repeat;
+}
+
+.mpIcon{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.mpIcon.new{
+    background: url(../images/rank-icons.png) no-repeat;
+    background-position: 0 -16px;
+}
+
+.mpIcon.viewed{
+    background: url(../images/icons1.png) no-repeat;
+    background-position: 0 -910px;
+}
+
+.mpIcon.responsed{
+    background: url(../images/mps/enviados.png) no-repeat;
+}

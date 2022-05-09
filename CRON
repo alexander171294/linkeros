@@ -1,0 +1,32 @@
+==================================
+ INSTRUCCIONES PARA SETEAR CRON
+==================================
+
+Key actual: ASDPOFMQPWMSLDA684579224
+
+- CRON PARA TAREAS BASICAS:
+
+miweb.com/index.php?action=cron_rangos&key=CLAVEDEFINIDAENCONSTANTES.PHP
+asigna los rangos correspondientes segun los puntos en los post y otras cuestiones.
+
+miweb.com/index.php?action=cron_puntos&key=CLAVEDEFINIDAENCONSTANTES.PHP
+otorga los puntos correspondientes a cada usuario según su rango.
+
+miweb.com/index.php?action=cron_tops&key=CLAVEDEFINIDAENCONSTANTES.PHP
+recachea el top si está activado el sistema de caché.
+
+miweb.com/index.php?action=cron_sitemap&key=CLAVEDEFINIDAENCONSTANTES.PHP
+genera un nuevo sitemap actualizado con los últimos 20k de post ordenados por fecha en: miweb.com/sitemap.xml
+
+- CRON BOT:
+
+miweb.com/index.php?action=xml_importer&key=CLAVEDEFINIDAENCONSTANTES.PHP
+importa un archivo xml y lo publica como un usuario bot, los archivos xml deben estar dentro de ini_filex/xml
+
+miweb.com/index.php?action=bot_newuser&key=CLAVEDEFINIDAENCONSTANTES.PHP
+crea 1 usuario cada vez que se acceda tomando la lista del archivo bot_usuarios.ini
+
+miweb.com/index.php?action=bot_comments&key=CLAVEDEFINIDAENCONSTANTES.PHP
+busca post que tengan menos del minimo de comentarios especificados en bot_comments.ini
+y crea comentarios al azar para completar la cantidad entre el minimo y el maximo
+en el archivo se pone minimo,maximo ej: 1,4 (hará que los post tengan entre 1 y 4 comentarios)

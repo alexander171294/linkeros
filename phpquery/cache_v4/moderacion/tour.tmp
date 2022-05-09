@@ -1,0 +1,87 @@
+<div class="row">
+    <?php if($noReports){ ?>
+    <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-grey">
+                <div class="panel-heading">Genial!</div>
+                <div class="panel-body">
+                    El equipo de moderación está haciendo un trabajo excelente, no hay reportes disponibles!
+                    <?php if($pageNext > 1){ ?>
+                    <a href="/control/tour" class="btn btn-azul" style="float: right;">Reiniciar</a>
+                    <?php } ?>
+                </div>
+            </div>
+    </div>
+    <?php } else { ?>
+    <div class="col-md-6 col-md-offset-3">
+            <?php if(!$reporte->void){ ?>
+            <div class="panel panel-grey">
+                <div class="panel-heading">Reporte de post</div>
+                <div class="panel-body">
+                    <b>Post:</b> <a href="/posts/<?=$postRorte->id_post;?>/<?=$postRorte->o_categoria->nombre_seo;?>/<?=$postRorte->titulo_seo;?>" target="__blank"><?=$postRorte->titulo;?></a><br />
+                    <b>Categoria:</b> <i><span class="categoria <?=$postRorte->o_categoria->foto_css;?>"></span><?=$postRorte->o_categoria->nombre_categoria;?></i><br />
+                    <b>Razon:</b> <?=$razonReporte->nombre;?><br />
+                    <p>
+                        <?=$reporte->mensaje;?>
+                    </p>
+                    <b>Fecha:</b> <?=$fechaReporte;?><br />
+                    <b>Autor del post:</b> <a href="/usuario/<?=$autor->id_usuario;?>/<?=$autor->nick_seo;?>"><?=$autor->nick;?></a><br />
+                    <b>Reportado por:</b> <a href="/usuario/<?=$reporter->id_usuario;?>/<?=$reporter->nick_seo;?>"><?=$reporter->nick;?></a><br />
+                    <hr />
+                    Acciones sobre el post:<br />
+                    <button type="button" class="btn btn-gris sendMP" data-to="<?=$autor->nick;?>" data-ismod="true" style="display: inline-block;">MP al autor</button>
+                    <button type="button" class="btn btn-rojo" id="borrar_post" data-id="<?=$postRorte->id_post;?>" style="display: inline-block;">Borrar</button>
+                    <?php if($postRorte->borrador == 0){ ?><button type="button" class="btn btn-amarillo" id="moveto_draft" data-id="<?=$postRorte->id_post;?>" style="display: inline-block;">Borrador</button><?php } ?>
+                    <button type="button" class="btn btn-verde" id="ignore_report" data-id="<?=$postRorte->id_post;?>" style="display: inline-block;">Ignorar</button>
+                
+                    <!--<button type="button" class="btn btn-azul" id="next_report" data-page="<?=$pageNext;?>" style="display: inline-block; float: right;">Siguiente »</button>-->
+                </div>
+            </div>
+            <?php } ?>
+            <?php if(!$reporteUsers->void){ ?>
+            <div class="panel panel-grey">
+                <div class="panel-heading">Reporte usuario</div>
+                <div class="panel-body">
+                    <b>Usuario:</b> <a href="/usuario/<?=$userReported->id_usuario;?>/<?=$userReported->nick_seo;?>" target="__blank"><?=$userReported->nick;?></a><br />
+                    <b>Razon:</b> <?=$razonReporteUser->nombre;?><br />
+                    <p>
+                        <?=$reporteUsers->mensaje;?>
+                    </p>
+                    <b>Fecha:</b> <?=$fechaReporteUser;?><br />
+                    <b>Reportado por: <a href="/usuario/<?=$userReportador->id_usuario;?>/<?=$userReportador->nick_seo;?>"><?=$userReportador->nick;?></a></b> <br />
+                    <hr />
+                    Acciones sobre el Usuario:<br />
+                    <button type="button" class="btn btn-gris sendMP" data-to="<?=$userReported->nick;?>" data-ismod="true" style="display: inline-block;">MP al autor</button>
+                    <button type="button" class="btn btn-rojo bannear_user" data-id="<?=$userReported->id_usuario;?>" style="display: inline-block;">Bannear</button>
+                    <button type="button" class="btn btn-verde" id="ignore_report_user" data-id="<?=$userReported->id_usuario;?>" style="display: inline-block;">Ignorar</button>
+                </div>
+            </div>
+            <?php } ?>
+            <?php if(!$reporteMps->void){ ?>
+            <div class="panel panel-grey">
+                <div class="panel-heading">Reporte mensaje privado</div>
+                <div class="panel-body">
+                    <b>Autor:</b> <a href="/usuario/<?=$theMP->user()->id_usuario;?>/<?=$theMP->user()->nick_seo;?>" target="__blank"><?=$theMP->user()->nick;?></a><br />
+                    <b>Asunto:</b> <?=$theMP->asunto_mensaje;?><br />
+                    <b>Contenido:</b>
+                    <p>
+                        <?=$theMP->contenido_mensaje;?>
+                    </p>
+                    <hr />
+                    <b>Razon:</b> <?=$razonReporteMP->nombre;?><br />
+                    <p>
+                        <?=$reporteMps->mensaje;?>
+                    </p>
+                    <b>Fecha:</b> <?=$fechaReporteMp;?><br />
+                    <b>Autor del report: <a href="/usuario/<?=$mpReportador->id_usuario;?>/<?=$mpReportador->nick_seo;?>"><?=$mpReportador->nick;?></a></b> <br />
+                    <hr />
+                    Acciones sobre el Mensaje Privado:<br />
+                    <button type="button" class="btn btn-gris sendMP" data-to="<?=$theMP->user()->nick;?>" data-ismod="true" style="display: inline-block;">MP al autor</button>
+                    <button type="button" class="btn btn-rojo bannear_user" data-id="<?=$theMP->user()->id_usuario;?>" style="display: inline-block;">Bannear</button>
+                    <button type="button" class="btn btn-verde" id="ignore_report_mp" data-id="<?=$theMP->id_mensaje;?>" style="display: inline-block;">Ignorar</button>
+                </div>
+            </div>
+            <?php } ?>
+            <button type="button" class="btn btn-azul" id="next_report" data-page="<?=$pageNext;?>" style="display: inline-block; float: right;">Siguiente »</button>
+    </div>
+    <?php } ?>
+</div>

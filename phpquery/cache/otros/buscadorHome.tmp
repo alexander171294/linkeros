@@ -1,0 +1,16 @@
+<script>
+    $('#home-buscador-post').click(function(e){
+        $('#home-buscador-li-usuario').removeClass('active');
+        $('#home-buscador-li-post').addClass('active');
+        $('.panel-searcher').removeClass('green');
+        $('.panel-searcher').addClass('blue');
+        e.preventDefault();
+    });
+    $('#home-buscador-usuario').click(function(e){
+        $('#home-buscador-li-usuario').addClass('active');
+        $('#home-buscador-li-post').removeClass('active');
+        $('.panel-searcher').removeClass('blue');
+        $('.panel-searcher').addClass('green');
+        e.preventDefault();
+    });
+</script>

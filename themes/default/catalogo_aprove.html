@@ -1,0 +1,165 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-white">
+                <div class="panel-heading">Detalles del post</div>
+                <div class="panel-body" style="font-weight: 100">
+                       Post: <b><a href="/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}" target="_blank">{$post->titulo}</a></b><br />
+                       Categoría: <b>{$post->o_categoria->nombre_categoria}</b><br />
+                       Recomendaciones: <b>{$post->getRecosCatalog()}</b>
+                </div>
+        </div>
+    </div>
+</div>
+{if="$post->o_categoria->is_multiple == 0"}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-advertencia">
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <b class="hiperb">El titulo:</b>
+                    <li><img src="/themes/default/images/fine.png" title="Recomendamos"/> Que sea descriptivo</li>
+                    <li><img src="/themes/default/images/bad.png" title="No recomendamos"/> TODO EN MAYUSCULAS</li>
+                </div>
+                <div class="col-md-4">
+                    <b class="hiperb">La foto:</b>
+                    <li><img src="/themes/default/images/fine.png" title="Recomendamos"/> Portada del producto</li>
+                    <li><img src="/themes/default/images/bad.png" title="No recomendamos"/> Foto, genérico, gif</li>
+                </div>
+                <div class="col-md-4">
+                    <b class="hiperb">Los detalles:</b>
+                    <li><img src="/themes/default/images/fine.png" title="Recomendamos"/> Completar todos</li>
+                    <li><img src="/themes/default/images/bad.png" title="No recomendamos"/> Detalles no correspondientes</li>
+                </div>
+            </div>
+        </div>
+         <div class="panel panel-agregar">
+              <div class="panel-body">
+                <form method="post">
+                  <div class="i-group">
+                    <label>Titulo: {if="$error_title"}<span style="color:red; font-size:10px;">{$error_title}</span>{/if}</label>
+                    <input type="text" value="" name="titulo" {if="$error_title"}style="border:1px solid red;"{/if}/>
+                  </div>
+                  <div class="i-group">
+                    <label>Foto: {if="$error_foto"}<span style="color:red; font-size:10px;">{$error_foto}</span>{/if}</label>
+                    <input type="text" value="" name="foto" placeholder="http://i.imgur.com/GIAHWII.jpg" {if="$error_foto"}style="border:1px solid red;"{/if}/>
+                  </div>
+                  <div class="row">
+                    <div class="i-group col-md-6">
+                      <label>Idioma:</label>
+                      <select name="idioma">
+                        {loop=$idiomas as $idioma}
+                          <option value="{$idioma->id_idioma}">{$idioma->nombre}</option>
+                        {/loop}
+                          <option value="0">Otro</option>
+                      </select>
+                    </div>
+                    <div class="i-group col-md-6">
+                      <label>Calidad:</label>
+                      <select name="calidad">
+                        {loop=$calidades as $calidad}
+                          <option value="{$calidad->id_calidad}">{$calidad->nombre}</option>
+                        {/loop}
+                          <option value="0">Otro</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="i-group">
+                    <div class="footer">
+                        <button type="submit" class="btn btn-verde" style="display:inline-block;">Continuar »</button>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+</div>
+{else}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-advertencia">
+            <div class="panel-body">
+                Buscar primero en catálogo si el grupo existe, para luego elegir la temporada y numero de episodio.
+            </div>
+        </div>
+        {if="$step == 1"}
+        <div class="panel panel-agregar">
+              <div class="panel-body">
+                <form method="post">
+                  <div class="i-group">
+                    <label>Titulo: {if="$error_title"}<span style="color:red; font-size:10px;">{$error_title}</span>{/if}</label>
+                    <input type="text" value="" name="search" {if="$error_title"}style="border:1px solid red;"{/if}/>
+                  </div>
+                  
+                  <div class="i-group">
+                    <div class="footer">
+                        <button type="submit" class="btn btn-azul" style="display:inline-block;">Continuar »</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+        </div>
+        {/if}
+        {if="$step == 2"}
+        <div class="panel panel-agregar">
+              <div class="panel-body">
+                <form method="post">
+                    
+                <h3>Sobre el grupo (serie/anime)</h3>
+                    
+                  <div class="i-group">
+                    <label>Elegir existente: {if="$error_objeto"}<span style="color:red; font-size:10px;">{$error_ojeto}</span>{/if}</label>
+                    <select name="existente" id="pickExist" style="font-size: 10pt;font-family: Tahoma; padding: 4px;width: 100%;margin: 0; border: 1px solid #ccc;">
+                        <option value="0">Seleccionar</option>
+                        <option value="0">Ninguno de los encontrados</option>
+                        {loop=$searchResult as $result}
+                        <option value="{$result->id_objeto}">{$result->titulo}</option>
+                        {/loop}
+                    </select>
+                    o si no lo encuentras puedes:
+                  </div>
+                    
+                  <div class="i-group">
+                    <label>Crear nuevo: {if="$error_title"}<span style="color:red; font-size:10px;">{$error_title}</span>{/if}</label>
+                    <input type="text" disabled="disabled" class="nuevoObjeto" value="" name="titulo"  placeholder="Arrow" {if="$error_title"}style="border:1px solid red;"{/if}/>
+                    <label>Foto:</label>
+                    <input type="text" disabled="disabled" class="nuevoObjeto" value="" name="foto" placeholder="http://i.imgur.com/GIAHWII.jpg" {if="$error_foto"}style="border:1px solid red;"{/if}/>
+                    <label>Idioma:</label>
+                      <select name="idioma" disabled="disabled" class="nuevoObjeto">
+                        {loop=$idiomas as $idioma}
+                          <option value="{$idioma->id_idioma}">{$idioma->nombre}</option>
+                        {/loop}
+                          <option value="0">Otro</option>
+                      </select>
+                      <label>Calidad:</label>
+                      <select name="calidad" disabled="disabled" class="nuevoObjeto">
+                        {loop=$calidades as $calidad}
+                          <option value="{$calidad->id_calidad}">{$calidad->nombre}</option>
+                        {/loop}
+                          <option value="0">Otro</option>
+                      </select>
+                  </div>
+                  
+                  <hr />
+                  
+                  <h3>Sobre el capítulo (post)</h3>
+                  <div class="i-group">
+                    <label>Número de temporada</label>
+                    <input type="text" value="" name="temporada"  placeholder="1" {if="$error_tempo"}style="border:1px solid red;"{/if}/>
+                    <label>Número de capitulo</label>
+                    <input type="text" value="" name="capitulo"  placeholder="8" {if="$error_cap"}style="border:1px solid red;"{/if}/>
+                  </div>
+                    
+                  
+                  <div class="i-group">
+                    <div class="footer">
+                        <button type="submit" class="btn btn-azul" style="display:inline-block;">Continuar »</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+        </div>
+        {/if}
+    </div>
+</div>
+{/if}
+

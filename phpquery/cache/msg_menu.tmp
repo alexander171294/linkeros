@@ -1,0 +1,17 @@
+            <div class="row">
+              
+              <div class="col-md-2">
+                <div class="panel panel-grey">
+                  <div class="panel-heading panelImportantRecolor">Opciones</div>
+                  <div class="panel-body">
+                    <label>Ver mensajes:</label>
+                    <ul class="periodo-ul">
+                      <li <?php if($triseccion == 1){ ?>class="active"<?php } ?>><a href="/mensajes" style="<?php if($triseccion == 1){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;"><i class="iconMSG recibidos"></i> Recibidos</a></li>
+                      <li <?php if($triseccion == 2){ ?>class="active"<?php } ?>><a href="/mensajes/enviados" style="<?php if($triseccion == 2){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;"><i class="iconMSG enviados"></i> Enviados</a></li>
+                      <li><hr /></li>
+                      <li><a href="#" style="color:#0f0fb4; text-decoration: none;" id="vaciarMP"><i class="iconMSG vaciar"></i> Vaciar Todo</a></li>
+                      <li><a href="#" style="color:#0f0fb4; text-decoration: none;" class="sendMP" data-to=""><i class="iconMSG nuevo"></i> Nuevo Mensaje</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>

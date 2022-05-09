@@ -1,0 +1,128 @@
+<div class="row" id="mainContainerCatalog" data-cate="{$stat_cate}" data-idioma="{$stat_idioma}" data-calidad="{$stat_calidad}" data-pagina="{$stat_pagina}">
+    <div class="col-md-3">
+        <div class="panel panel-grey">
+            <div class="panel-heading panelImportantRecolor">Opciones</div>
+            <div class="panel-body">
+                    <label>Categoría:</label>
+                    <select name="category" class="catalogFilter" id="categoryFilter">
+                        <option value="0">Todas</option>
+                        {loop=$categorias_catalog as $categoria}
+                            <option value="{$categoria->id_categoria}" class="catl2 {$categoria->foto_css}" {if="$categoria->id_categoria == $stat_cate"}selected="selected"{/if}>{$categoria->nombre_categoria}</option>
+                        {/loop}
+                    </select>
+                    <label>Idioma:</label>
+                    <select name="idioma" class="catalogFilter" id="idiomaFilter">
+                        <option value="0">Todos</option>
+                        {loop=$idiomas as $idioma}
+                            <option value="{$idioma->id_idioma}" {if="$idioma->id_idioma == $stat_idioma"}selected="selected"{/if}>{$idioma->nombre}</option>
+                        {/loop}
+                    </select>
+                    <label>Grupo/Calidad:</label>
+                    <select name="calidad" class="catalogFilter" id="calidadFilter" {if="$stat_cate < 1"}disabled="disabled"{/if}>
+                        <option value="0">Todos{if="$stat_cate < 1"} (categoría){/if}</option>
+                        {if="$stat_cate > 0"}
+                            {loop=$calidades as $calidad}
+                            <option value="{$calidad->id_calidad}" {if="$calidad->id_calidad == $stat_calidad"}selected="selected"{/if}>{$calidad->nombre}</option>
+                            {/loop}
+                        {/if}
+                    </select>
+                    <label>Buscar en catálogo:</label>
+                    <form method="post" action="/catalogo_buscador">
+                        <input type="hidden" name="category" value="{$stat_cate}">
+                        <input type="hidden" name="idioma" value="{$stat_idioma}">
+                        <input type="hidden" name="calidad" value="{$stat_calidad}">
+                        <input type="text" name="search" placeholder="buscar" class="catalogFilter"/>
+                    </form>
+                    
+            </div>
+        </div>
+        {if="$login"}
+        <div class="panel panel-grey">
+            <div class="panel-heading">Ficha personal</div>
+            <div class="panel-body">
+                    <ul class="userstats">
+                      <li>
+                          <span id="user_followers">{$me->puntos_catalogo}</span>
+                          <strong>Puntos Catalogo</strong>
+                      </li>
+                      <li class="puntos">
+                          <span id="user_points">{$me->post_catalogo}</span>
+                          <strong>Post en catálogo</strong>
+                      </li>
+                      <li>
+                          <span id="user_comentarios">{$me->aportes_catalogo}</span>
+                          <strong>Aportes</strong>
+                      </li>
+                  </ul>
+            </div>
+        </div>
+        {/if}
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-greyborder">
+            <div class="panel-body" id="globalContentCatalog">
+                <div class="catalogTipsy oculto" id="catTipsyCli"></div>
+                <div class="row">
+                {loop=$objects as $key to $object}
+                {if="$key%6 == 0"}</div><div class="row">{/if}
+                <div class="col-md-2 catalogBlock" data-title="{$object->titulo}">
+                    <a href="/catalogo_objeto/{$object->id_objeto}">
+                        <div class="groupCatalogIcons">
+                            <div class="iconQuality">
+                                <i class="iCatlgQ {$object->getCalidad()->css_icon}" title="{$object->getCalidad()->nombre}"></i>
+                            </div>
+                            <div class="iconLang">
+                                <i class="iCatlg {$object->getIdioma()->css_icon}" title="{$object->getIdioma()->nombre}"></i>
+                            </div>
+                            <div class="iconCate">
+                                <span class="categoria {$object->getCategoria()->foto_css}" title="{$object->getCategoria()->nombre_categoria}"></span>
+                            </div>
+                        </div>
+                        <img src="{$object->foto}" class="catalogCover" alt="{$object->titulo}" title="{$object->titulo}"/>
+                    </a>
+                </div>
+                {/loop}
+                </div>
+                {if="$stat_pagina > 0"}<a href="/catalogos{if="$subsection == 'descargable'"}/descargables{/if}{if="$subsection == 'online'"}/online{/if}/p{$stat_pagina-1}">&laquo; Anterior</a>{/if}
+                {if="$more_pages"}<a href="/catalogos{if="$subsection == 'descargable'"}/descargables{/if}{if="$subsection == 'online'"}/online{/if}/p{$stat_pagina+1}" style="float:right">Siguiente &raquo;</a>{/if}
+            </div>
+        </div>
+    </div>
+</div>
+
+{if="$login && ($me->id_rango == 2 || $me->id_rango == 3 || $me->id_rango == 6)"}
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-grey">
+            <div class="panel-heading">Moderar Reportes</div>
+            <div class="panel-body">
+                <ul class="MainListPost">
+                {if="$most_reported"}
+                    {loop=$most_reported as $post}
+                        <li class="{if="$post->patrocinado==1"}patrocinado{/if} {if="$post->sticky"}sticky{/if}"><h3><a href="/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}">{if="$post->patrocinado==1"}<div class="catlist patrocinado"></div>{/if} <span class="categoria {$post->o_categoria->foto_css}"></span>{$post->titulo}</a></h3></li>
+                    {/loop}
+                {else}
+                    <li>No hay post para moderar</li>
+                {/if}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-grey">
+            <div class="panel-heading">Moderar Sugerencias</div>
+            <div class="panel-body">
+                <ul class="MainListPost">
+                {if="$most_suggested"}
+                    {loop=$most_suggested as $post}
+                        <li class="{if="$post->patrocinado==1"}patrocinado{/if} {if="$post->sticky"}sticky{/if}"><h3><a href="/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}">{if="$post->patrocinado==1"}<div class="catlist patrocinado"></div>{/if} <span class="categoria {$post->o_categoria->foto_css}"></span>{$post->titulo}</a></h3></li>
+                    {/loop}
+                {else}
+                    <li>No hay post para moderar</li>
+                {/if}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{/if}

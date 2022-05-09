@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-9" style="padding-right: 25px;">
+        <ul class="nav nav-tabs nav-account">
+                    <li role="presentation" <?php if($subsection=='account'){ ?>class="active"<?php } ?>><a href="/account">Cuenta</a></li>
+                    <li role="presentation" <?php if($subsection=='profile'){ ?>class="active"<?php } ?>><a href="/account/profile">Perfil</a></li>
+                    <li role="presentation" <?php if($subsection=='design'){ ?>class="active"<?php } ?>><a href="/account/design">Diseño del Sitio</a></li>
+                    <li role="presentation" <?php if($subsection=='account_password'){ ?>class="active"<?php } ?>><a href="/account/password">Cambiar clave</a></li>
+                    <li class="privacy"><a href="/account/privacy">&nbsp;</a></li>
+        </ul>

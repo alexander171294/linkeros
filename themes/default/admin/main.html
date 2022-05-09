@@ -1,0 +1,61 @@
+            <div class="col-md-10">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Bienvenido!<i class="mpIcon viewed right"></i></div>
+                    <div class="panel-body">
+                      Antes de guardar la configuración se le solicitará la contraseña <b>Maestra</b>.<br />
+                      Este panel solo permite cambiar las configuraciones generales del script y administrar el sitio.<br />
+                      <hr />
+                      <b>Tablas:</b> (Advertencia: la modificación directa de tablas puede traer problemas de coherencia en el sistema)<br />
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Categorías</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Usuarios</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Comentarios</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Emoticonos</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">MP Enviados</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">MP Recibidos</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Noticias</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Países</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Post</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Rangos</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Razones reportes post</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Razones reportes mps</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Razones reportes usuarios</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Sesiones</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Tags</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Tags post</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Top cache</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Reportes usuarios</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Mod History</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">IP Tables</a>
+                      <a href="" class="btn btn-verde" style="display: inline-block;">Cache relateds</a>
+                    </div>
+                </div>
+                
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Últimos reportes de seguridad</div>
+                  <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <td>ID Reporte</td>
+                            <td>Titulo</td>
+                            <td>Descripción</td>
+                            <td>Usuario asociado</td>
+                            <td>Fecha</td>
+                        </thead>
+                        <tbody>
+                            {loop=$lastReports as $reporte}
+                            <tr {if="$reporte->relevancia == 1"}style="font-weight: bolder;"{/if}{if="$reporte->relevancia == 2"}style="font-weight: bolder;color:red;"{/if}>
+                                <td>{$reporte->id_reporte}</td>
+                                <td>{$reporte->titulo}</td>
+                                <td>{$reporte->descripcion}</td>
+                                <td><a href="/usuario/{$reporte->autor()->id_usuario}/{$reporte->autor()->nick_seo}">{$reporte->autor()->nick}</a></td>
+                                <td>{$reporte->fecha()}</td>
+                            </tr>
+                            {/loop}
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+                
+              </div>
+            
+            </div>

@@ -1,0 +1,164 @@
+            <!-- CONTENIDO -->
+            <div class="panel panel-advertencia">
+            </div>
+            <div class="panel panel-agregar">
+              <div class="panel-body">
+                <form method="post">
+                  <div class="i-group">
+                    <label>Titulo: {if="$error_location == 1"}<span style="color:red; font-size:10px;">{$error}</span>{/if}</label>
+                    <input type="text" value="{$titulo}" name="titulo" {if="$error_location == 1"}style="border:1px solid red;"{/if}/>
+                  </div>
+                  <div class="i-group">
+                    <label>Contenido del post: {if="$error_location == 2"}<span style="color:red; font-size:10px;">{$error}</span>{/if}</label>
+                    <div class="miniEditor-buttonBar blackBar">
+						<div class="mEIconGroup">
+							  <button type="button" class="miniEditor-button bolder" data-bbc="b" data-description="Negrita" data-margin="0"></button>
+							  <button type="button" class="miniEditor-button italica" data-bbc="i" data-description="Italica" data-margin="26"></button>
+							  <button type="button" class="miniEditor-button underline" data-bbc="u" data-description="Subrayado" data-margin="58"></button>
+							  <button type="button" class="miniEditor-button mEleft" data-bbc="alignL" data-description="Alinear izquierda" data-margin="88"></button>
+							  <button type="button" class="miniEditor-button mEcenter" data-bbc="alignC" data-description="Alinear a centro" data-margin="116"></button>
+							  <button type="button" class="miniEditor-button mEright" data-bbc="alignR" data-description="Alinear a derecha" data-margin="146"></button>
+						</div>
+						<div class="mEIconGroup">
+							  <button type="button" class="miniEditor-button mEsize" data-submenu="miniEselectSize" data-bbc="size" data-description="Tamaño" data-margin="186"></button>
+							  <div class="submenu hide" id="miniEselectSize">
+									<select id="sizesSelect">
+										  <option value="-1" selected="">Elegir</option>
+										  <option value="8" style="font-size:8px;">8</option>
+										  <option value="10" style="font-size:10px;">10</option>
+										  <option value="11" style="font-size:11px">11</option>
+										  <option value="12" style="font-size:12px">12</option>
+										  <option value="13" style="font-size:13px">13</option>
+										  <option value="14" style="font-size:14px">14</option>
+										  <option value="16" style="font-size:16px">16</option>
+										  <option value="18" style="font-size:18px">18</option>
+										  <option value="20" style="font-size:20px">20</option>
+										  <option value="24" style="font-size:24px">24</option>
+										  <option value="48" style="font-size:48px">48</option>
+										  <option value="72" style="font-size:72px">72</option>
+									</select>
+							  </div>
+							  <button type="button" class="miniEditor-button mEcolor" data-submenu="miniEselectColor" data-bbc="color" data-description="Color" data-margin="213"></button>
+							  <div class="submenu hide" id="miniEselectColor">
+									<select id="colorSelect">
+										  <option value="-1" selected="">Elegir</option>
+										  <option value="blue" style="color:blue;">Azul</option>
+										  <option value="red" style="color:red;">Rojo</option>
+										  <option value="orange" style="color:orange;">Naranja</option>
+										  <option value="green" style="color:green;">Verde</option>
+										  <option value="lime" style="color:lime;">Verde loro</option>
+										  <option value="aqua" style="color:aqua;">aqua</option>
+										  <option value="blueviolet" style="color:blueviolet;">blueviolet</option>
+										  <option value="brown" style="color:brown;">brown</option>
+										  <option value="fuchsia" style="color:fuchsia;">fuchsia</option>
+										  <option value="hotpink" style="color:hotpink;">hotpink</option>
+										  <option value="lawngreen" style="color:lawngreen;">lawngreen</option>
+										  <option value="lightcoral" style="color:lightcoral;">lightcoral</option>
+										  <option value="lightseagreen" style="color:lightseagreen;">lightseagreen</option>
+										  <option value="pink" style="color:pink;">pink</option>
+										  <option value="purple" style="color:purple;">purple</option>
+										  <option value="seagreen" style="color:seagreen;">seagreen</option>
+										  <option value="silver" style="color:silver;">silver</option>
+										  <option value="steelblue" style="color:steelblue;">steelblue</option>
+										  <option value="yellowgreen" style="color:yellowgreen;">yellowgreen</option>
+										  <option value="burlywood" style="color:burlywood;">burlywood</option>
+										  <option value="cadetblue" style="color:cadetblue;">cadetblue</option>
+										  <option value="chartreuse" style="color:chartreuse;">chartreuse</option>
+										  <option value="chocolate" style="color:chocolate;">chocolate</option>
+										  <option value="coral" style="color:coral;">coral</option>
+										  <option value="cornflowerblue" style="color:cornflowerblue;">cornflowerblue</option>
+										  <option value="crimson" style="color:crimson;">crimson</option>
+										  <option value="cyan" style="color:cyan;">cyan</option>
+										  <option value="olive" style="color:olive;">olive</option>
+										  <option value="orchid" style="color:orchid;">orchid</option>
+										  <option value="orangered" style="color:orangered;">orangered</option>
+										  <option value="maroon" style="color:maroon;">maroon</option>
+										  <option value="darkblue" style="color:darkblue;">darkblue</option>
+										  <option value="darkcyan" style="color:darkcyan;">darkcyan</option>
+										  <option value="darkgoldenrod" style="color:darkgoldenrod;">darkgoldenrod</option>
+										  <option value="darkgray" style="color:darkgray;">darkgray</option>
+										  <option value="darkgreen" style="color:darkgreen;">darkgreen</option>
+										  <option value="darkgrey" style="color:darkgrey;">darkgrey</option>
+										  <option value="darkkhaki" style="color:darkkhaki;">darkkhaki</option>
+										  <option value="darkmagenta" style="color:darkmagenta;">darkmagenta</option>
+										  <option value="darkolivegreen" style="color:darkolivegreen;">darkolivegreen</option>
+										  <option value="darkorange" style="color:darkorange;">darkorange</option>
+										  <option value="darkorchid" style="color:darkorchid;">darkorchid</option>
+										  <option value="darkred" style="color:darkred;">darkred</option>
+										  <option value="darksalmon" style="color:darksalmon;">darksalmon</option>
+									</select>
+							  </div>
+							  <button type="button" class="miniEditor-button mEfont" data-submenu="miniEselectFuente" data-bbc="font" data-description="Fuente" data-margin="243"></button>
+							  <div class="submenu hide" id="miniEselectFuente">
+									<select id="fuenteSelect">
+										  <option value="-1" selected="">Elegir</option>
+										  <option value="cursive" style="font-family: cursive;">Cursive</option>
+										  <option value="fantasy" style="font-family: fantasy;">Fantasy</option>
+										  <option value="monospace" style="font-family: monospace;">Monospace</option>
+										  <option value="sans-serif" style="font-family: sans-serif;">Sans-Serif</option>
+										  <option value="serif" style="font-family: serif;">Serif</option>
+									</select>
+							  </div>
+						</div>
+						<div class="mEIconGroup">
+							  <button type="button" class="miniEditor-button mEimage" data-bbc="img" data-description="Imagen" data-margin="283"></button>
+							  <button type="button" class="miniEditor-button mEurl" data-bbc="url" data-description="Link" data-margin="310"></button>
+							  <button type="button" class="miniEditor-button mEcode" data-bbc="code" data-description="codigo" data-margin="340"></button>
+						</div>
+						<div class="mEIconGroup">
+							  <button type="button" class="miniEditor-button mEYoutube" data-bbc="youtube" data-description="Video de youtube" data-margin="380"></button>
+							  <button type="button" class="miniEditor-button mECitar" data-bbc="quote" data-description="Citar comentario" data-margin="407"></button>
+							  <button type="button" class="miniEditor-button mElocked" data-bbc="locked" data-description="Contenido bloqueado" data-margin="437"></button>
+						</div>
+						<div class="descriptionBar hide" id="descriptionBar"></div>
+					</div>
+										<textarea name="contenido" class="miniEditor" id="miniEditor">{$contenido}</textarea>
+                    <button id="openEmotiBox" class="EmotiButton"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+										<div class="EmotiBox Gray" style="display:none;" id="emotiBox">
+											{loop=$emoticonos as $emoticono}
+											<img class="emoticonoGLB" src="/themes/default/images/emoticonos/{$emoticono->imagen}" data-bbcode="{$emoticono->codigo}"/>
+											{/loop}
+										</div>
+                </div>
+                  <div class="i-group">
+                    <label>Tags: {if="$error_location == 3"}<span style="color:red; font-size:10px;">{$error}</span>{/if}</label>
+                    <input type="text" value="{$tags}" name="tags" {if="$error_location == 3"}style="border:1px solid red;"{/if}/>
+                    <span class="minitext">Los tags son palabras que describen el post separadas por coma. ejemplo: gol, mundial, mano, maradona</span>
+                  </div>
+                  <div class="i-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Categoría: {if="$error_location == 4"}<span style="color:red; font-size:10px;">{$error}</span>{/if}</label>
+                        <select class="needed" name="categoria" size="10" style="width:315px">
+                          <option class="sel" value="-1">Seleccionar una categoría...</option>
+                          {loop=$categorias as $categoria}
+                              <option class="catl2 {$categoria->foto_css}" value="{$categoria->id_categoria}" {if="$categoria->id_categoria == $category"}selected=""{/if}>{$categoria->nombre_categoria}</option>
+                          {/loop}
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Opciones:</label>
+                        <p class="minitext">
+                          <input type="checkbox" name="closed" {if="$cerrados"}checked="checked"{/if}> <b>Cerrar los comentarios</b> <br />
+                          Quita la posibilidad de que los usuarios comenten tu post.
+                        </p>
+                        <p class="minitext">
+                          <input type="checkbox" name="register" {if="$registrados"}checked="checked"{/if}> <b>Para usuarios registrados</b> <br />
+                          Solo los usuarios registrados podran ver tu post.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="i-group">
+                    
+                    <div class="footer">
+												<input type="submit" class="btn btn-azul" value="Guardar en borradores" name="borrador" style="display:inline-block;" />
+                        <button type="submit" class="btn btn-verde" style="display:inline-block;">Publicar »</button>
+                    </div>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+        <link href="{%theme_location%}css/miniEditor.css" rel="stylesheet">

@@ -1,0 +1,15 @@
+{
+    "uploader": true,
+    "link": true,
+    "cam": false,
+    "maxWH": false,
+    "width": 300,
+    "height": 350,
+    "maxSize": 2048,
+    "hostingExternal": true,
+    "cdn": false,
+    "cdnLink": "http://avatar.localhost/",
+    "scale": true,
+    "nWidth": 300,
+    "nHeight": 300
+}

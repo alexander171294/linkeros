@@ -1,0 +1,287 @@
+            
+            <!-- CONTENIDO -->
+            <div class="row">
+              <div class="col-md-2">
+                <div class="thumbnail">
+                  <img src="{$user->avatar}" />
+                </div>
+              </div>
+              <div class="col-md-6" style="padding-left: 0px;">
+                <ul class="profileInfo-ul">
+                    <li class="nick" {if="$user->isBanned()"}style="color:brown;text-decoration: line-through;"{/if}>@{$user->nick}</li>
+                    <li class="name">{$user->nombre}</li>
+                    <li class="mensaje">{$user->mensaje_perfil}</li>
+                    <li>Es un{if="$user->sexo == 2"} hombre{else}a mujer{/if}{if="$user->anio_n>0"} de {$edad} años{/if}. Vive en {$pais->nombre_pais} y se unió a la familia de {%WEB_SITE%} el {$fecha}.</li>
+                    {if="$editRango"}
+                    <li class="editRango">
+                      <select id="rango_usuario" style="color: #3F71FF;border: 1px dashed #3F71FF;height: 25px;" data-id="{$user->id_usuario}">
+                        {loop=$rangos as $rango01}
+                        <option value="{$rango01->id_rango}" {if="$rango01->id_rango == $user->id_rango"}selected{/if}>{$rango01->nombre_rango} [{$rango01->puntos_disponibles}]</option>
+                        {/loop}
+                      </select>
+                      {if="$me->id_rango == 2 || $me->id_rango == 3"}
+                      {if="!$user->isBanned()"}<button class="btn btn-rojo btn-mini" id="userBan" data-id="{$user->id_usuario}">Bannear</button>{else}<button class="btn btn-verde btn-mini" id="userUnban" data-id="{$user->id_usuario}">Desbannear</button>{/if}
+                      <button class="btn btn-azul btn-mini" id="userEdit" data-id="{$user->id_usuario}">Editar usuario</button>
+                        {if="$me->id_rango == 2"}<button class="btn btn-amarillo btn-mini" id="userDrop" data-id="{$user->id_usuario}">Vaciar actividad</button>{/if}
+                      {/if}
+                    </li>
+                    {/if}
+                    {if="$login && $me->id_usuario != $user->id_usuario"}
+                    <li class="groupUserActions">
+                      
+                      {if="SYSTEM_REPORTES"}{if="!$user->isAdmin()"}<button type="button" class="btn btn-plata reportarUsuario" id="user_reportar" data-id="{$user->id_usuario}" style="display: inline-block;"><i class="icon denunciar"></i> Denunciar</button>{/if}{/if}
+                      
+                      {if="seguidores_usuarios::is_follow($me->id_usuario, $user->id_usuario)"}
+                        <button type="button" class="btn btn-plata general_boton_no_seguir" data-id="{$user->id_usuario}" style="display: inline-block;"><i class="icon no-seguir"></i> Dejar de seguir</button>
+                      {else}
+                        <button type="button" class="btn btn-plata general_boton_seguir" data-id="{$user->id_usuario}" style="display: inline-block;"><i class="icon seguir"></i> Seguir usuario</button>
+                      {/if}
+                    </li>
+                    {/if}
+                </ul>
+              </div>
+              <div class="col-md-4">
+                  <div class="row user-infoboxes">
+                    <div class="col-md-6" style="background: linear-gradient(rgb(70, 153, 145), rgb(17, 119, 124));border: 1px solid rgb(7, 102, 105);color: #b4f1eb;">{if="$user->isBanned()"}<div class="main-cont" style="color:brown;">Baneado</div>{else}<div class="main-cont" style="color: #95ffca;text-shadow: 0px 0px 3px black;">{$rango->nombre_rango}</div>{/if} Rango <i class="icon {if="$online"}online{else}offline{/if} right" title="{if="$online"}conectado{else}desconectado{/if}"></i></div>
+                    <div class="col-md-6"><div class="main-cont">{$user->puntos_obtenidos}</div> Puntos</div>
+                    <div class="col-md-6"><div class="main-cont">{$user->post_creados}</div> Posts</div>
+                    <div class="col-md-6"><div class="main-cont">{$user->comentarios_creados}</div> Comentarios</div>
+                    <div class="col-md-6"><div class="main-cont">{$user->seguidores}</div> Seguidores</div>
+                    <div class="col-md-6"><div class="main-cont">{$user->siguiendo}</div> Siguiendo</div>
+                  </div>
+              </div>
+            </div>
+            <div class="row medalBlockProfile">
+              <div class="title">Medallas</div>
+                  {loop=$medals as $medal}
+                  <img src="{$medal->foto}" class="medalProfile" title="{$medal->nombre}">
+                  {/loop}
+            </div>
+            <div class="row" style="margin-top: 5px;" id="gropInfoUpdate">
+                  <ul class="nav nav-tabs profile-tabs">
+                    <li role="presentation" data-tab="activity" class="active"><a href="#gropInfoUpdate" >Actividad</a></li>
+                    <li role="presentation" data-tab="informacion"><a href="#gropInfoUpdate">Información</a></li>
+                    <li role="presentation" data-tab="posts"><a href="#gropInfoUpdate">Posts</a></li>
+                    <!--<li role="presentation"><a href="#">Temas</a></li>-->
+                    <li role="presentation" data-tab="seguidores"><a href="#gropInfoUpdate">Seguidores</a></li>
+                    <li role="presentation" data-tab="siguiendo"><a href="#gropInfoUpdate">Siguiendo</a></li>
+                    <!--<li role="presentation"><a href="#">Medallas</a></li>-->
+                    
+                    {if="$login && $user->id_usuario!==$me->id_usuario"}<li role="presentation" class="specialMenuTab"><a href="#" class="sendMP" data-to="{$user->nick}"><i class="icon msg"></i></a></li>{/if}
+                  </ul>
+                  <div class="blockinfo-profile">
+                    <div class="row container">
+                      <div class="col-md-8" id="tab_activity">
+                        <h3>Última actividad de {$user->nick}</h3>
+                        <ul class="lastActivityGroup-Profile">
+                          {if="$activity_hoy !== array()"}<li class="liHead">Hoy</li>{/if}
+                          {loop=$activity_hoy as $activity}
+                            {if="$activity instanceof post"}
+                            <li><i class="specIcons newPost"></i> creó el post <a href="/posts/{$activity->id_post}/{$activity->o_categoria->nombre_seo}/{$activity->titulo_seo}">{$activity->titulo}</a> <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof comentarios"}
+                            <li><i class="icon comentarios"></i> Comentó en <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof puntos_post"}
+                            <li><i class="icon puntos"></i> Dio {$activity->cantidad} punto{if="$activity->cantidad>1"}s{/if} en <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof favoritos_post"}
+                            <li><i class="icon favoritos"></i> agregó a favoritos <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof seguidores_usuarios"}
+                            <li><i class="icon seguir"></i> siguió a <a href="/usuario/{$activity->getSeguidor()->id_usuario}/{$activity->getSeguidor()->nick_seo}">{$activity->getSeguidor()->nick}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof seguidores_post"}
+                            <li><i class="icon seguir"></i> siguió el post <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                          {/loop}
+                          {if="$activity_ayer !== array()"}<li class="liHead">Ayer</li>{/if}
+                          {loop=$activity_ayer as $activity}
+                            {if="$activity instanceof post"}
+                            <li><i class="specIcons newPost"></i> creó el post <a href="/posts/{$activity->id_post}/{$activity->o_categoria->nombre_seo}/{$activity->titulo_seo}">{$activity->titulo}</a> <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof comentarios"}
+                            <li><i class="icon comentarios"></i> Comentó en <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof puntos_post"}
+                            <li><i class="icon puntos"></i> Dio {$activity->cantidad} punto{if="$activity->cantidad>1"}s{/if} en <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof favoritos_post"}
+                            <li><i class="icon favoritos"></i> agregó a favoritos <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof seguidores_usuarios"}
+                            <li><i class="icon seguir"></i> siguió a <a href="/usuario/{$activity->getSeguidor()->id_usuario}/{$activity->getSeguidor()->nick_seo}">{$activity->getSeguidor()->nick}</a>  <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                            {if="$activity instanceof seguidores_post"}
+                            <li><i class="icon seguir"></i> siguió el post <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a> <span class="infoDate">{$activity->getHora()}</span></li>
+                            {/if}
+                          {/loop}
+                          {if="$activity_antes !== array()"}<li class="liHead">Antes</li>{/if}
+                          {loop=$activity_antes as $activity}
+                            {if="$activity instanceof post"}
+                            <li><i class="specIcons newPost"></i> creó el post <a href="/posts/{$activity->id_post}/{$activity->o_categoria->nombre_seo}/{$activity->titulo_seo}">{$activity->titulo}</a> <span class="infoDate">{$activity->getFecha()}</span></li>
+                            {/if}
+                            {if="$activity instanceof comentarios"}
+                            <li><i class="icon comentarios"></i> Comentó en <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a> <span class="infoDate">{$activity->fecha_formateada}</span></li>
+                            {/if}
+                            {if="$activity instanceof puntos_post"}
+                            <li><i class="icon puntos"></i> Dio {$activity->cantidad} punto{if="$activity->cantidad>1"}s{/if} en <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a> <span class="infoDate">{$activity->getFecha()}</span></li>
+                            {/if}
+                            {if="$activity instanceof favoritos_post"}
+                            <li><i class="icon favoritos"></i> agregó a favoritos <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a> <span class="infoDate">{$activity->getFecha()}</span></li>
+                            {/if}
+                            {if="$activity instanceof seguidores_usuarios"}
+                            <li><i class="icon seguir"></i> siguió a <a href="/usuario/{$activity->getSeguidor()->id_usuario}/{$activity->getSeguidor()->nick_seo}">{$activity->getSeguidor()->nick}</a> <span class="infoDate">{$activity->getFecha()}</span></li>
+                            {/if}
+                            {if="$activity instanceof seguidores_post"}
+                            <li><i class="icon seguir"></i> siguió el post <a href="/posts/{$activity->getPost()->id_post}/{$activity->getPost()->o_categoria->nombre_seo}/{$activity->getPost()->titulo_seo}">{$activity->getPost()->titulo}</a> <span class="infoDate">{$activity->getFecha()}</span></li>
+                            {/if}
+                          {/loop}
+                        </ul>
+                      </div>
+                      <div class="col-md-8" style="display: none" id="tab_informacion">
+                        <h3>Información de {$user->nick}</h3>
+                        <ul class="lastActivityGroup-Profile">
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Facebook</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->facebook}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Twitter</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->twitter}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Steam</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->steam}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Battlenet</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->battlenet}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Xbox</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->xbox}</div>
+                            </div>
+                          </li>
+                          <li class="liHead">Intereses</li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Intereses Personales</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->intereses}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Mis hobbies</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->hobbies}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Series favoritas</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->series}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Musica favorita</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->musica}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Deportes favoritos</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->deportes}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Libros favoritos</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->libros}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Peliculas favoritas</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->peliculas}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Comidas favoritas</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->comidas}</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col-md-3">Mis heroes</div>
+                              <div class="col-md-9" style="color:black;font-weight: bolder">{$profile->heroes}</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-8" style="display: none" id="tab_posts">
+                        <h3>Últimos post de {$user->nick}</h3>
+                        <ul class="lastActivityGroup-Profile">
+                          {loop=$posts as $post}
+                          <li class="{if="$post->patrocinado==1"}patrocinado{/if} {if="$post->sticky"}sticky{/if}"><a href="/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}"><span class="categoria {$post->o_categoria->foto_css}"></span>{$post->titulo}</a> <span class="infoDate">{$post->getFecha()}</span></li>
+                          {/loop}
+                        </ul>
+                      </div>
+                      <div class="col-md-8" style="display: none" id="tab_seguidores">
+                        <h3>Seguidores de {$user->nick}</h3>
+                        {loop=$fullSeguidores as $seguidor}
+                          <a href="/usuario/{$seguidor->id_usuario}/{$seguidor->nick_seo}" style="font-size: 15px;font-weight: bolder; margin: 5px;">{$seguidor->nick}</a>
+                        {/loop}
+                      </div>
+                      
+                      <div class="col-md-8" style="display: none" id="tab_siguiendo">
+                        <h3>{$user->nick} sigue a:</h3>
+                        {loop=$fullSiguiendo as $seguidor}
+                          <a href="/usuario/{$seguidor->id_usuario}/{$seguidor->nick_seo}" style="font-size: 15px;font-weight: bolder; margin: 5px;">{$seguidor->nick}</a>
+                        {/loop}
+                      </div>
+                      <div class="col-md-4" style="border-left: 1px solid #cac5c5;background: #f5f5f5;">
+                        <!--<h3>Medallas <span class="miniInfoTitle">0</span></h3>-->
+                        <h3>Seguidores <span class="miniInfoTitle">{$user->seguidores}</span></h3>
+                        <div class="miniBlockSeguidores">
+                          {loop=$miniSeguidores as $seguidor}
+                          <a href="/usuario/{$seguidor->id_usuario}/{$seguidor->nick_seo}"><img class="miniProfileProfile" src="{$seguidor->avatar}" alt="{$seguidor->nick}" title="{$seguidor->nick}"/></a>
+                          {/loop}
+                        </div>
+                        <h3>Siguiendo <span class="miniInfoTitle">{$user->siguiendo}</span></h3>
+                        <div class="miniBlockSeguidores">
+                          {loop=$miniSiguiendo as $seguidor}
+                          <a href="/usuario/{$seguidor->id_usuario}/{$seguidor->nick_seo}"><img class="miniProfileProfile" src="{$seguidor->avatar}" alt="{$seguidor->nick}" title="{$seguidor->nick}"/></a>
+                          {/loop}
+                        </div>
+                        <h3>Actividad</h3>
+                        <div class="miniBlockSeguidores">
+                          <ul class="userstats" style="border: 0px;background: transparent;">
+                            <li>
+                              <span id="user_followers">{$lastActivity}</span>
+                              <strong>Última vez activo</strong>
+                            </li>
+                            <li class="puntos">
+                                <span id="user_points">{$lastPost}</span>
+                                <strong>Último post</strong>
+                            </li>
+                            <li>
+                                <span id="user_comentarios">{$lastComment}</span>
+                                <strong>Último comentario</strong>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>

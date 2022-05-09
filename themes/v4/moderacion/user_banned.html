@@ -1,0 +1,30 @@
+<div class="row">
+    <table class="postModerate">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Perfil</th>
+                <th>Fecha</th>
+                <th>Moderador</th>
+            </tr>
+        </thead>
+        <tbody>
+            {loop=$banneds as $uban}
+            <tr>
+                <td>
+                    {$uban['user']->id_usuario}
+                </td>
+                <td>
+                    <a href="/usuario/{$uban['user']->id_usuario}/{$uban['user']->nick_seo}">{$uban['user']->nick}</a>
+                </td>
+                <td>
+                    {$uban['history']['fecha']}
+                </td>
+                <td>
+                    <a href="/usuario/{$uban['history']['moderador']->id_usuario}/{$uban['history']['moderador']->nick_seo}">{$uban['history']['moderador']->nick}</a>
+                </td>
+            </tr>
+            {/loop}
+        </tbody>
+    </table>
+</div>

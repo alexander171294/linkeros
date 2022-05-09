@@ -1,0 +1,6 @@
+<div class="row">
+    <div class="col-md-9" style="padding-right: 25px;">
+        <ul class="nav nav-tabs nav-account">
+                    <li role="presentation" {if="$subsection=='account'"}class="active"{/if}><a href="/uac_profile/{$theuser}">Cuenta</a></li>
+                    <li role="presentation" {if="$subsection=='account_password'"}class="active"{/if}><a href="/uac_password/{$theuser}">Contraseña</a></li>
+        </ul>

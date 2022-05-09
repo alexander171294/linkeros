@@ -1,0 +1,52 @@
+<div class="row">
+    <table class="postModerate">
+        <thead>
+            <tr>
+                <th>Target</th>
+                <th>Link</th>
+                <th>Acción</th>
+                <th>Moderador</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {loop=$lastReport as $report}
+            <tr>
+                <td>
+                    {if="$report->tipo_target == 1"}
+                    Post
+                    {/if}
+                    {if="$report->tipo_target == 2"}
+                    Usuario
+                    {/if}
+                </td>
+                <td>
+                    {if="$report->tipo_target == 1"}
+                        {if="!$report->getPost()->void"}
+                        <a href="/posts/{$report->getPost()->id_post}/{$report->getPost()->o_categoria->nombre_seo}/{$report->getPost()->titulo_seo}">{$report->getPost()->titulo}</a>
+                        {else}
+                            {$report->original_title}
+                        {/if}
+                    {/if}
+                    {if="$report->tipo_target == 2"}
+                        {if="!$report->getUser()->void"}
+                        <a href="/usuario/{$report->getUser()->id_usuario}/{$report->getUser()->nick_seo}">{$report->getUser()->nick}</a>
+                        {else}
+                            {$report->original_title}
+                        {/if}
+                    {/if}
+                </td>
+                <td>
+                    {$report->getAction()}
+                </td>
+                <td>
+                    <a href="/usuario/{$report->getMod()->id_usuario}/{$report->getMod()->nick_seo}"><span class="user">{$report->getMod()->nick}</span></a>
+                </td>
+                <td>
+                    {$report->getFecha()}
+                </td>
+            </tr>
+            {/loop}
+        </tbody>
+    </table>
+</div>

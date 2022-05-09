@@ -1,0 +1,57 @@
+            <div class="col-md-10">
+                <form method="post">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Top y cacheado<i class="mpIcon viewed right"></i></div>
+                    <div class="panel-body">
+                        <?php if(isset($saved)){ ?>
+                        <div class="no-comments-voidloop">
+                            Debes reabrir la ventana para que el nucleo del sistema cargue las nuevas constantes.
+                        </div>
+                        <?php } else { ?>
+                      <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Opcion</th>
+                                <th>Valor</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cachear top?</td><td><input type="checkbox" class="switchable" name="cacheado" <?php if(TOP_CACHEADO){ ?>checked="checked"<?php } ?>/></td><td>Esto reduce conciderablemente el consumo de recursos, pero el top tiene que ser actualizado usando un cron y no será en vivo.</td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Hoy</td><td><input type="checkbox" class="switchable" name="cacheHoy" <?php if(TOP_CACHEADO_HOY){ ?>checked="checked"<?php } ?>/></td><td>Si el cacheado de top está activado, esto establece si la sección "top hoy" será cacheada</td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Ayer</td><td><input type="checkbox" class="switchable" name="cacheAyer" <?php if(TOP_CACHEADO_AYER){ ?>checked="checked"<?php } ?>/></td><td>Si alguno de estos switch se desactiva, la sección especifica no será  cacheada por cron y será en vivo</td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Semana</td><td><input type="checkbox" class="switchable" name="cacheSemana" <?php if(TOP_CACHEADO_SEMANA){ ?>checked="checked"<?php } ?>/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Mes</td><td><input type="checkbox" class="switchable" name="cacheMes" <?php if(TOP_CACHEADO_MES){ ?>checked="checked"<?php } ?>/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Mes Anterior</td><td><input type="checkbox" class="switchable" name="cacheMesAnterior" <?php if(TOP_CACHEADO_MES_ANTERIOR){ ?>checked="checked"<?php } ?>/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Año</td><td><input type="checkbox" class="switchable" name="cacheAnio" <?php if(TOP_CACHEADO_ANIO){ ?>checked="checked"<?php } ?>/></td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Cachear Histórico</td><td><input type="checkbox" class="switchable" name="cacheHistorico" <?php if(TOP_CACHEADO_HISTORICO){ ?>checked="checked"<?php } ?>/></td><td>De todas las opciones, esta es la que menos consume (de hecho cachearlo o no cachearlo responde a casi el mismo consumo con la diferencia que en cache hay menos registros)</td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td><td><input type="text" name="cantidad" value="<?=TOP_CANTIDAD;?>"/></td><td>Cantidad de post que se mostrarán en el TOP</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      <?php } ?>
+                    <hr />
+                      <input type="password" name="adminPass" placeholder="Global Kernell Password" /> <b>** OBLIGATORIO</b><button type="submit" class="btn btn-verde pull-right" style="display: inline-block;">Guardar</button>
+                    </div>
+                </div>
+                </form>
+              </div>
+            
+            </div>

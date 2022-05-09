@@ -1,0 +1,182 @@
+
+            
+            <!-- CONTENIDO -->
+            <div class="row">
+              <div class="col-md-5 fixedMarginCol">
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Últimos posts <?php if($subsection == 'novatos'){ ?> de novatos<?php } ?></div>
+                  <div class="panel-body">
+                    <ul class="MainListPost">
+                      <?php foreach($sticky as $post){ ?>
+                        <li class="<?php if($post->patrocinado==1){ ?>patrocinado<?php } ?> <?php if($post->sticky){ ?>sticky<?php } ?>"><h3><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><?php if($post->patrocinado==1){ ?><div class="catlist patrocinado"></div><?php } ?> <span class="categoria <?=$post->o_categoria->foto_css;?>"></span><?=$post->titulo;?></a></h3></li>
+                      <?php } ?>
+                      <?php if(count($sticky)>0){ ?>
+                        <li class="divisor"><hr /></li>
+                      <?php } ?>
+                      <?php foreach($posts as $post){ ?>
+                        <li class="<?php if($post->patrocinado==1){ ?>patrocinado<?php } ?> <?php if($post->sticky){ ?>sticky<?php } ?>"><h3><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><?php if($post->patrocinado==1){ ?><div class="catlist patrocinado"></div><?php } ?> <span class="categoria <?=$post->o_categoria->foto_css;?>"></span><?=$post->titulo;?></a></h3></li>
+                      <?php } ?>
+                    </ul>
+                    <?php if($ShowNext){ ?>
+                    <a href="/<?=$PrePaginatorSeo;?>page/<?=$NextPage;?>" style="float:right">Siguiente »</a>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="col-md-4 fixedMarginCol">
+                
+                <ul class="nav nav-pills nav-searcher hidden-xs hidden-sm">
+                  <li role="presentation" class="blue active" id="home-buscador-li-post"><a href="#" id="home-buscador-post">Posts</a></li>
+                  <li role="presentation" class="green" id="home-buscador-li-usuario"><a href="#" id="home-buscador-usuario">Users</a></li>
+                  <li role="presentation" class="sky" id="home-buscador-li-tags"><a href="#" id="home-buscador-tags">Tags</a></li>
+                </ul>
+                <div class="panel panel-searcher blue hidden-xs hidden-sm">
+                  <div class="panel-body">
+                    <form method="post" action="/buscador" id="formBusquedaMain">
+                      <div class="left"></div>
+                      <div class="right"></div>
+                      <input type="text" name="q" placeholder="Buscar" id="texto">
+                      <input type="button" class="button" value="" title="Buscar" id="realizarBusqueda">
+                    </form>
+                  </div>
+                </div>
+                
+                <div class="panel panel-greyborder">
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <span class="online"><?=$uonline;?> usuario<?php if($uonline!=1){ ?>s<?php } ?> conectado<?php if($uonline!=1){ ?>s<?php } ?></span>
+                    </div>
+                    <div class="col-md-6">
+                      <?=$countMiembros;?> miembro<?php if($countMiembros!=1){ ?>s<?php } ?>
+                    </div>
+                    <div class="col-md-6">
+                      <?=$countPosts;?> post<?php if($countPosts!=1){ ?>s<?php } ?>
+                    </div>
+                    <div class="col-md-6">
+                      <?=$countComentarios;?> comentario<?php if($countComentarios!=1){ ?>s<?php } ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="panel panel-green">
+                  <div class="panel-heading">Últimos comentarios <span class="icon refresh right" style="margin-top: 3px; margin-right: 3px;"></span></div>
+                  <div class="panel-body">
+                    <ul class="lastComments">
+                      <?php foreach($LastComments as $comentario){ ?>
+                      <li><a href="/usuario/<?=$comentario->usuario_objeto->id_usuario;?>/<?=$comentario->usuario_objeto->nick_seo;?>"><span class="user"><?=$comentario->usuario_objeto->nick;?></span></a> <a href="/posts/<?=$comentario->getPost()->id_post;?>/<?=$comentario->getPost()->o_categoria->nombre_seo;?>/<?=$comentario->getPost()->titulo_seo;?>"><?=$comentario->getPost()->titulo;?></a></li>
+                      <?php } ?>
+                    </ul>
+                  </div>
+                </div>
+                <!--
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Destacados <a href="#">(ver más)</a> <span class="icon refresh right" style="margin-top: 3px; margin-right: 3px;"></span></div>
+                  <div class="panel-body">
+                    Nada por aquí.
+                  </div>
+                </div>
+                -->
+                
+                <div class="panel panel-green hidden-xs hidden-sm">
+                  <div class="panel-heading">Top posts <a href="/tops">(ver más)</a></div>
+                  <div class="panel-body">
+                    <ol class="topPost">
+                    <?php foreach($statsPost as $post){ ?>
+                      <li><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><?=$post->titulo;?></a> <span class="puntos"><?=$post->puntos;?></span></li>
+                    <?php } ?>
+                    </ol>
+                  </div>
+                </div>
+                
+                <div class="panel panel-green hidden-xs hidden-sm">
+                  <div class="panel-heading">Top usuarios <a href="/tops">(ver más)</a></div>
+                  <div class="panel-body">
+                    <ol class="topPost">
+                    <?php foreach($statsUsers as $user){ ?>
+                      <li><a href="/usuario/<?=$user->id_usuario;?>/<?=$user->nick_seo;?>"><?=$user->nick;?></a> <span class="puntos"><?=$user->puntos_obtenidos;?></span></li>
+                    <?php } ?>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="col-md-3 fixedMarginCol">
+                <?php if(BOX_SHOW){ ?>
+                <div class="panel panel-white" style="box-shadow: 0px 0px 3px #0A07FF;">
+                  <div class="panel-heading"><i class="icon history"></i> <?=BOX1_TITULO;?></div>
+                  <div class="panel-body" style="font-weight: normal;font-family: comic sans-serif;">
+                    <?=BOX1_CONTENIDO;?>
+                  </div>
+                </div>
+                <?php } ?>
+                <!--
+                <div class="panel panel-white" style="box-shadow: 0px 0px 5px #FF0707;">
+                  <div class="panel-heading"><i class="icon working"></i> Estamos trabajando</div>
+                  <div class="panel-body" style="font-weight: normal;font-family: comic sans-serif;">
+                    Hola!, este script se encuentra en desarrollo, por lo que puedes encontrar secciones sin terminar, funciones que fallan y cosas que esperan ser reparadas. No desesperes, y si encuentras un bug por favor contacta al administrador (<a href='#' class='sendMP' data-to='vladimir'>Vladimir</a>, <a href='#' class='sendMP' data-to='tracer'>Tracer</a>, <a href='#' class='sendMP' data-to='ferchu'>Ferchu</a>) para solucionarlo cuanto antes.
+                  </div>
+                </div>-->
+                
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Lo último en catálogos</div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <?php foreach($CatalogObjectsHome as $catalog){ ?>
+                      <div class="col-md-6 catalogBlock" data-title="<?=$catalog->titulo;?>">
+                        <a href="/catalogo_objeto/<?=$catalog->id_objeto;?>">
+                          <div class="groupCatalogIcons">
+                              <div class="iconQuality">
+                                  <i class="iCatlgQ <?=$catalog->getCalidad()->css_icon;?>" title="<?=$catalog->getCalidad()->nombre;?>"></i>
+                              </div>
+                              <div class="iconLang">
+                                  <i class="iCatlg <?=$catalog->getIdioma()->css_icon;?>" title="<?=$catalog->getIdioma()->nombre;?>"></i>
+                              </div>
+                              <div class="iconCate">
+                                  <span class="categoria <?=$catalog->getCategoria()->foto_css;?>" title="<?=$catalog->getCategoria()->nombre_categoria;?>"></span>
+                              </div>
+                          </div>
+                          <img src="<?=$catalog->foto;?>" class="catalogCover" alt="<?=$catalog->titulo;?>" title="<?=$catalog->titulo;?>"/>
+                          <span style="display: block;text-align: center;margin-top: 5px;max-height: 20px;overflow: hidden;"><?=$catalog->titulo;?></span>
+                        </a>
+                       </div>
+                      <?php } ?>
+                    </div>
+                    <div class="row">
+                      <a href="/catalogos" style="text-align: center;display: block;margin-bottom: -10px;font-weight: bolder;margin-top: 5px;">Ver todo el catálogo</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="panel panel-grey2 hidden-xs hidden-sm">
+                  <div class="panel-heading">Últimos tags</div>
+                  <div class="panel-body">
+                    <?php foreach($listTags as $tag){ ?>
+                      <span class="tagSize<?=$tag->size;?>">
+                        <?=$tag->texto_tag;?>
+                      </span>
+                    <?php } ?>
+                  </div>
+                </div>
+                
+                <div class="panel panel-grey2">
+                  <div class="panel-heading">Usuarios en linea <span style="font-size: 10px;color: #d2d0d0;">(Visibles) <span class="miniUser admin">Admin</span> <span class="miniUser moderator">Mod</span></div>
+                  <div class="panel-body">
+                    <?php if($uOnlineList){ ?>
+                      <?php foreach($uOnlineList as $user){ ?>
+                      <a href="/usuario/<?=$user->id_usuario;?>/<?=$user->nick_seo;?>" class="miniUser <?php if($user->id_rango == 2){ ?>admin<?php } ?><?php if($user->id_rango == 3){ ?>moderator<?php } ?>"><?=$user->nick;?></a>
+                      <?php } ?>
+                    <?php } else { ?>
+                      <div class="no-comments-voidloop">No hay usuarios visibles en linea.</div>
+                    <?php } ?>
+                  </div>
+                </div>
+                
+                
+              </div>
+            </div>
+            
+
+

@@ -1,0 +1,6 @@
+47 0,2,4,6,8,10,12,14,16,18,20,22 * * * wget -q https://www.linkeros.com/index.php?action=bot_newuser&key=ASDPOFMQPWMSLDA684579224
+0,20,40 * * * * wget -q https://www.linkeros.com/index.php?action=xml_importer&key=ASDPOFMQPWMSLDA684579224
+0 3 * * * wget -q https://www.linkeros.com/index.php?action=cron_rangos&key=ASDPOFMQPWMSLDA684579224
+0 3 * * * wget -q https://www.linkeros.com/index.php?action=cron_puntos&key=ASDPOFMQPWMSLDA684579224
+0 3 * * * wget -q https://www.linkeros.com/index.php?action=cron_tops&key=ASDPOFMQPWMSLDA684579224
+0 3 * * * wget -q https://www.linkeros.com/index.php?action=cron_sitemap&key=ASDPOFMQPWMSLDA684579224

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proceso de instalación">
+    <meta name="author" content="Cloringa Script">
+
+    <title>Install</title>
+
+    <!-- Stylesheets -->
+    <link href="/themes/install/css/bootstrap.css" rel="stylesheet">
+		<link href="/themes/install/css/animation.css" rel="stylesheet">
+		<link href="/themes/install/css/checkbox/orange.css" rel="stylesheet">
+		<link href="/themes/install/css/preview.css" rel="stylesheet">
+		<link href="/themes/install/css/authenty.css" rel="stylesheet">
+	
+		<!-- Font Awesome CDN -->
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+			<section id="signup_wizard" class="authenty signup-wizard">
+				<div class="section-content">
+					<div style="padding-bottom:250px;">
+						<div class="container">
+							<div class="form-wrap">
+								
+								<div data-animation="fadeInUp" data-animation-delay=".6s">
+									<div class="row nav-step">
+										<div class="col-xs-3 active"><span></span></div>
+										<div class="col-xs-3"><span></span></div>
+										<div class="col-xs-3"><span></span></div>
+										<div class="col-xs-3"><span></span></div>
+									</div>								
+						    	<div class="row nav-step-label">
+						        	<div class="col-xs-3">Bienvenido</div>
+									<div class="col-xs-3">DataBase</div>
+									<div class="col-xs-3">Configurar script</div>
+									<div class="col-xs-3">Instalando</div>
+								</div>
+								</div>
+								
+								<div data-animation="bounceInLeft" data-animation-delay=".2s">
+									<div class="row">
+						  			<ul class="page-container">
+							        <li class="current">
+										<p>Bienvenido al instalador de <?=$script;?> v<?=VERSION;?>.</p>
+									</li>
+							        <li>
+							       		 <p>Por favor ingrese los datos de su DB.</p>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Host" id="db_host">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="User" id="db_user">
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control" placeholder="Password" id="db_pass">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="DB Name" id="db_name">
+										</div>
+							        </li>
+							        <li>
+							       		 <p>Por favor ingrese otros datos.</p>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="http://miweb.com" id="web_link">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Mi web title" id="web_title">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="User Admin" id="user_nick">
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control" placeholder="Pass Admin" id="user_pass">
+										</div>
+							        </li>
+							        <li><span>List of task:</span>
+												<div class="step-confirm" id="steps">
+													<div class="row" id="item1">
+														<div class="col-xs-5">Status</div>
+														<div class="col-xs-5">Esperando</div>
+													</div>
+												</div>
+							        </li>
+							    	</ul>
+									</div>
+									
+									<div class="page-footer">
+										<div class="row step-wrap">
+											<div class="col-xs-12">
+												<span><span id="stepNo"></span> of 4</span>
+											</div>
+										</div>
+										<div class="row btn-wrap">
+											<div class="col-xs-6" id="prev">
+												<button class="btn btn-block nav-step-btn">Previous</button> 
+											</div>
+											<div class="col-xs-6" id="next">
+								    			<button class="btn btn-block nav-step-btn">Next</button>
+											</div>
+								    		<div class="col-xs-6" id="submit">
+								    			<button class="btn btn-block nav-step-btn" id="go_install">Install!</button>
+											</div>
+											<div class="col-xs-6" id="eoinstall">
+								    			<button class="btn btn-block nav-step-btn" id="go_web">My Web</button>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		
+		
+	  
+    <!-- js library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+   		<script src="/themes/install/js/bootstrap.min.js"></script>
+		<script src="/themes/install/js/jquery.icheck.min.js"></script>
+		<script src="/themes/install/js/waypoints.min.js"></script>
+		
+		<!-- authenty js -->
+		<script src="/themes/install/js/authenty.js"></script>
+		
+		<!-- preview scripts -->
+		<script src="/themes/install/js/preview/jquery.malihu.PageScroll2id.js"></script>
+		<script src="/themes/install/js/preview/jquery.address-1.6.min.js"></script>
+		<script src="/themes/install/js/preview/scrollTo.min.js"></script>
+		<script src="/themes/install/js/preview/init.js"></script>
+		
+		
+		<!-- preview scripts -->
+		<script>
+			(function($) {
+				
+				// get full window size
+				$(window).on('load resize', function(){
+				    var w = $(window).width();
+				    var h = $(window).height();
+
+				    $('section').height(h);
+				});		
+
+				// scrollTo plugin
+				$('#signup_from_1').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+				$('#forgot_from_1').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+				$('#signup_from_2').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+				$('#forgot_from_2').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+				$('#forgot_from_3').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+				
+				
+				// set focus on input
+				var firstInput = $('section').find('input[type=text], input[type=email]').filter(':visible:first');
+        
+				if (firstInput != null) {
+            firstInput.focus();
+        }
+				
+				$('section').waypoint(function (direction) {
+					var target = $(this).find('input[type=text], input[type=email]').filter(':visible:first');
+					target.focus();
+				}, {
+	          offset: 300
+	      }).waypoint(function (direction) {
+					var target = $(this).find('input[type=text], input[type=email]').filter(':visible:first');
+			  	target.focus();
+	      }, {
+	          offset: -400
+	      });
+				
+				
+				// animation handler
+				$('[data-animation-delay]').each(function () {
+	          var animationDelay = $(this).data("animation-delay");
+	          $(this).css({
+	              "-webkit-animation-delay": animationDelay,
+	              "-moz-animation-delay": animationDelay,
+	              "-o-animation-delay": animationDelay,
+	              "-ms-animation-delay": animationDelay,
+	              "animation-delay": animationDelay
+	          });
+	      });
+				
+	      $('[data-animation]').waypoint(function (direction) {
+	          if (direction == "down") {
+	              $(this).addClass("animated " + $(this).data("animation"));
+	          }
+	      }, {
+	          offset: '90%'
+	      }).waypoint(function (direction) {
+	          if (direction == "up") {
+	              $(this).removeClass("animated " + $(this).data("animation"));
+	          }
+	      }, {
+	          offset: '100%'
+	      });
+			
+			})(jQuery);
+		</script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<!-- SCRIPT INSTALLER  -->
+		<script>
+			var items = 1;
+			var querys = 0;
+			$('#eoinstall').hide();
+			
+			$('#go_install').click(function(){
+				var db_host = $('#db_host').val();
+				var db_user = $('#db_user').val();
+				var db_pass = $('#db_pass').val();
+				var db_name = $('#db_name').val();
+				var link = $('#web_link').val();
+				var title = $('#web_title').val();
+				$.post('/?action=install_ajax', {'file': 'true', 'db_host': db_host, 'db_user': db_user, 'db_pass': db_pass, 'db_name': db_name, 'link': link, 'title': title}, function(response){
+					console.log(response);
+					response = JSON.parse(response);
+					addStatus(response.task, response.result);
+					execQuerys();
+				});
+			});
+			
+			
+			function addStatus(task, result)
+			{
+				if(items > 4) 
+					$('#item'+(items-4)).hide();
+				items++;
+				$('#steps').append('<div class="row" id="item'+items+'"><div class="col-xs-5">'+task+'</div><div class="col-xs-5">'+result+'</div></div>');
+			}
+			
+			function execQuerys()
+			{
+				$.post('/?action=install_ajax', {'file': 'false', 'query': querys}, function(response){
+					querys++;
+					response = JSON.parse(response);
+					addStatus(response.task, response.result);
+					if(response.end == false)
+						execQuerys();
+					if(response.end == true)
+					{
+						makeUser();
+					}
+						
+				});
+			}
+			
+			function makeUser()
+			{
+				var user_nick = $('#user_nick').val();
+				var user_pass = $('#user_pass').val();
+				$.post('/?action=install_ajax&makeUser', {nick: user_nick,pass: user_pass}, function(response){
+					addStatus('Create User', 'OK');
+					addStatus('FINISH', 'OK');
+					$('#submit').hide();
+					$('#eoinstall').show();
+				});
+			}
+			
+			$('#go_web').click(function(){
+				var link = $('#web_link').val();
+				window.location = link;
+			});
+		</script>
+  </body>
+</html>

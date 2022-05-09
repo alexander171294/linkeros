@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-language" content="es">
+    
+    <link rel="icon" href="{%theme_location%}favicon.ico">
+    <link rel="shortcut icon" href="{%theme_location%}favicon.ico" type="image/x-icon" />
+    
+    {if="_::$globals['controller'] == 'ver_post'"}
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="{%WEB_LINK%}/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}" />
+    <title>{$post->tituloCortado()}</title>
+    <meta name="description" content="{$post->contenidoCortado()}">
+    <meta name="author" content="{$autor->nick}">
+    <meta name="keywords" content="{$post->keywords()}">
+    
+    <meta property="og:site_name" content="{%WEB_SITE%}">
+    <meta property="og:url" content="{%WEB_LINK%}/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}">
+    <meta property="og:title" content="{$post->tituloCortado()}">
+    <meta property="og:description" content="{$post->contenidoCortado()}">
+    <meta property="og:type" content="article">
+    
+    <meta name="DC.title" content="{$post->tituloCortado()}" />
+    <meta name="DC.subject" content="{$post->keywords()}">
+    <meta name="DC.description" content="{$post->contenidoCortado()}">
+    <meta name="DC.language" content="es">
+    <meta name="DC.creator" content="{$autor->nick}">
+    
+    {else}
+    
+    <title>{%WEB_SITE%} - {%WEB_LEMA%}</title>
+    <meta name="description" content="{%descripcion%}">
+    <meta name="author" content="{%author%}">
+    
+    <meta property="og:site_name" content="{%WEB_SITE%}">
+    <meta property="og:url" content="{%WEB_LINK%}">
+    <meta property="og:title" content="{%WEB_SITE%} - {%WEB_LEMA%}">
+    <meta property="og:description" content="{%descripcion%}">
+    
+    <meta name="DC.title" content="{%WEB_SITE%}" />
+    <meta name="DC.description" content="{%descripcion%}">
+    <meta name="DC.language" content="es">
+    <meta name="DC.creator" content="{%author%}">
+    
+    
+      {if="_::$globals['fileController'] == 'estaticas'"}
+    <meta name="robots" content="noindex,nofollow">
+      {else}
+    <meta name="robots" content="noindex,follow">
+      {/if}
+      
+    {/if}
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+    <div class="cortinaGeneral" id="loaderModal" style="position: fixed;top: 0px;left: 0px;width: 100%;height: 100%;background-color: #FAFAFA;z-index: 99999;">
+      <div class="loading" style="display: block;position: relative;text-align: center;margin-top: 25px;font-size: 32px;color: #1f5cff;font-family: Helvetica;">Cargando...</div>
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+      <style>
+        .spinner{margin:100px auto 0;width:70px;text-align:center}.spinner > div{width:18px;height:18px;background-color:#1f5cff;border-radius:100%;display:inline-block;-webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;animation:sk-bouncedelay 1.4s infinite ease-in-out both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes sk-bouncedelay{0%,80%,100%{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1.0)}}@keyframes sk-bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{-webkit-transform:scale(1.0);transform:scale(1.0)}}
+      </style>
+    </div>
+
+    <div id="main_box">
+        <div id="menu_principal">
+            <div id="border_top"></div>
+            <a href="/"><div id="main_logo"></div><div id="anniversary" title="1 año de linkeros"></div></a>
+            <div class="movileContainer visible-xxs">
+              <ul class="menu_derecho movtab">
+                <li><a href="#" id="openTabDerecho"><i class="fa fa-bars"></i></a></li>
+              </ul>
+              <ul class="menu_izquierdo movtab">
+                <li><a href="#" id="openTabIzquierdo"><i class="fa fa-bars"></i></a></li>
+              </ul>
+            </div>
+            <ul class="menu_derecho" id="menuDerecho">
+              {if="!$login"}
+                <li class="login" id="clogin_action"><a href="#" id="core_login"><i class="fa fa-sign-in"></i> Identificarme</a>
+                  <div id="loginbox" class="hide">
+                    <div class="alert alert-danger hide" role="alert" id="login_error"></div>
+                    <label>Usuario:</label>
+                    <input type="text" value="" name="nick" id="login_user"/>
+                    <label>Contraseña:</label>
+                    <input type="password" value="" name="pass" id="login_pass"/>
+                    <div id="captchaInLogin" {if="!$needCaptcha"}style="display: none;"{/if}>
+                      <label>Captcha:</label>
+                      <div id="g-recaptchaInLogin"></div>
+                    </div>
+                    <span class="loginRemember"><input type="checkbox" name="remember" id="rememberLogin"/> Recordar datos</span> <button type="button" class="btn btn-azul" id="login_button">Entrar</button>
+                    <span class="bottom">¿Olvidaste tu contraseña? <a href="#" id="login_remember">entra aquí.</a></span>
+                  </div>
+                </li>
+                <li class="registrarme"><a href="#" class="core_registro"><i class="fa fa-user-plus"></i> Registrarme</a></li>
+              {else}
+                <li id="barbtn_notify" {if="!SECCION_NOTIFICACIONES"}class="locked" disabled="disabled"{/if}><a href="#"><i class="fa fa-eye"></i> <span class="visible-xxs">Notificaciones</span></a> {if="$GTPcantNotify > 0"}<div class="contadorMenu">{$GTPcantNotify}</div>{/if}</li>
+                <li><a href="/favoritos"><i class="fa fa-star-o"></i> <span class="visible-xxs">Favoritos</span></a></li>
+                <li><a href="/borradores"><i class="fa fa-eraser"></i> <span class="visible-xxs">Borradores</span></a></li>
+                <li><a href="/mensajes"><i class="fa fa-envelope-o"></i> <span class="visible-xxs">Mensajes</span></a> {if="$GTPcantMPS > 0"}<div class="contadorMenu">{$GTPcantMPS}</div>{/if}</li>
+                <li><a href="/account"><i class="fa fa-sliders"></i> <span class="visible-xxs">Cuenta</span></a></li>
+                <li><a href="/usuario/{$me->id_usuario}/{$me->nick_seo}" class="profiletext"><i class="fa fa-user visible-xxs"></i> {$me->nick}</a></li>
+                <li><a href="#" id="barbtn_logout"><i class="fa fa-sign-out"></i> <span class="visible-xxs">Salir</span></a></li>
+              {/if}
+            </ul>
+            
+            <ul class="menu_izquierdo" id="menuIzquierdo">
+                <li {if="$section == 'posts'"}class="active"{/if}><a href="/"><i class="fa fa-list-ul"></i> Posts</a></li>
+                <li {if="$section == 'catalogos'"}class="active"{/if} style="overflow: hidden; vertical-align: bottom;"><div class="betaMenu">Beta</div> <a href="/catalogos"><i class="fa fa-th-large"></i> Catálogos</a></li>
+                <li {if="$section == 'tops'"}class="active"{/if}><a href="/tops"><i class="fa fa-line-chart"></i> TOPs</a></li>
+                <li {if="$section == 'buscador'"}class="active"{/if}><a href="/buscador"><i class="fa fa-search"></i> Buscador</a></li>
+                <!--<li {if="$section == 'adults'"}class="active"{/if}><a href="/adults" style="color:#C70000">+18 <img src="{%theme_location%}images/arrowdown.png"></a></li>-->
+                <!--<li {if="$section == 'test_area'"}class="active"{/if}><a href="/test_area" style="color: #BB10AE;">VIP <img src="{%theme_location%}images/arrowdown.png"></a></li>-->
+                <!--<li {if="$section == 'control'"}class="active"{/if}><a href="/control">Ejecutor <img src="{%theme_location%}images/arrowdown.png"></a></li>-->
+                {if="$login && $me->isMod()"}
+                <!--<li><a href="#" style="color:white;background: linear-gradient(rgb(20, 144, 127), rgb(2, 90, 70));">Catálogos <img src="{%theme_location%}images/arrowdown.png"></a></li>
+                <li><a href="#" style="color:white;background: linear-gradient(rgb(119, 11, 11), rgb(90, 2, 2));">Adultos <img src="{%theme_location%}images/arrowdown.png"></a></li>
+                --><li><a href="/control"><i class="fa fa-gavel"></i> Control</a></li>
+                {/if}
+            </ul>
+            
+            
+        </div>
+        <div id="notifybox" class="hide">
+                    <h4>Notificaciones</h4>
+                    <ul class="uNotifyList">
+                      <!--
+                      <li><i class="icon seguir"></i> <a href="#">Alexander171294</a> te está siguiendo</li>
+                      <li><i class="icon favoritos"></i> <a href="#">Alexander171294</a> agregó a favoritos tu <a href="#">post</a></li>
+                      <li><i class="icon working"></i> <a href="#">Alexander171294</a> eliminó tu comentario <a href="#">aquí</a></li>
+                      <li><i class="icon comentarios"></i> <a href="#">Alexander171294</a> comentó tu <a href="#">post</a></li>
+                      <li><i class="icon comentarios"></i> <a href="#">Alexander171294</a> comentó un <a href="#">post</a> que sigues</li>
+                      <li><i class="icon draft"></i> <a href="#">Alexander171294</a> creó un <a href="#">post</a></li>
+                      <li><i class="icon working"></i> tu <a href="#">post</a> fué pegado</li>
+                      <li><i class="icon working"></i> tu <a href="#">post</a> fué eliminado</li>
+                      <li><i class="icon puntos"></i> <a href="#">Alexander171294</a> puntuó <a href="#">post</a></li>
+                      -->
+                    </ul>
+                    <div class="bottom"><a href="#">Ver más notificaciones.</a></div>
+        </div>
+        {if="$section == 'posts' || $section == null || $section == 'buscador'"}
+            <div id="menu_secondary">
+                <ul class="nav nav-tabs container">
+                    <li role="presentation" {if="$subsection == 'home'"}class="active"{/if}><a href="/">Inicio</a></li>
+                    {if="SECCION_NOBS"}<li role="presentation" {if="$subsection == 'novatos'"}class="active"{/if}><a href="/novatos">Novatos</a></li>{/if}
+                    <!--<li role="presentation" {if="$subsection == 'destacados'"}class="active"{/if}><a href="#">Destacados</a></li>-->
+                    {if="$login"}<li role="presentation"{if="$subsection == 'add_post'"}class="active"{/if}><a href="/agregar">Agregar post</a></li>{/if}
+                    <li role="presentation" {if="$subsection == 'guia'"}class="active"{/if}><a href="/tutorial" title="La guía de usuarios"><i class="fa fa-book"></i></a></li>
+                    {if="SECCION_CATEGORIAS"}<div id="seleccionar_categoria">
+                        <span>Filtrar por categorías:</span>
+                        <select id="catSelectorMain">
+                          <option value="-1">Seleccionar categoria...</option>
+                          {loop=$categorias as $categoria}
+                              <option class="catl2 {$categoria->foto_css}" value="{$categoria->id_categoria}" data-id="{$categoria->id_categoria}" data-seo="{$categoria->nombre_seo}">{$categoria->nombre_categoria}</option>
+                          {/loop}
+                        </select>
+                    </div>{/if}
+                </ul>
+            </div>
+        {/if}
+        {if="$section == 'catalogos'"}
+            <div id="menu_secondary">
+                <ul class="nav nav-tabs container">
+                    <li role="presentation" {if="$subsection == 'inicio'"}class="active"{/if}><a href="/catalogos">Todos</a></li>
+                    <li role="presentation" {if="$subsection == 'descargable'"}class="active"{/if}><a href="/catalogos/descargables">Descargables</a></li>
+                    <li role="presentation" {if="$subsection == 'online'"}class="active"{/if}><a href="/catalogos/online">Online</a></li>
+                    <li role="presentation" {if="$subsection == 'calidades'"}class="active"{/if}><a href="/catalogo_calidades">Calidades/Idiomas</a></li>
+                </ul>
+            </div>
+        {/if}
+        {if="$section == 'tops'"}
+            <div id="menu_secondary">
+                <ul class="nav nav-tabs container">
+                    <li role="presentation" {if="$subsection == 'top_post'"}class="active"{/if}><a href="/tops">Posts</a></li>
+                    <li role="presentation" {if="$subsection == 'top_users'"}class="active"{/if}><a href="#">Usuarios</a></li>
+                </ul>
+            </div>
+        {/if}
+        {if="$section == 'control'"}
+            <div id="menu_secondary">
+                <ul class="nav nav-tabs container">
+                    <li role="presentation" {if="$subsection == 'control_inicio'"}class="active"{/if}><a href="/control">Inicio</a></li>
+                    <li role="presentation" {if="$subsection == 'control_tour'"}class="active"{/if}><a href="/control/tour">Moderar</a></li>
+                    <li role="presentation" {if="$subsection == 'control_history'"}class="active"{/if}><a href="/control/history">Historial</a></li>
+                    <li role="presentation" {if="$subsection == 'control_iptable'"}class="active"{/if}><a href="/control/iptable">Tabla de IP</a></li>
+                    <li role="presentation" {if="$subsection == 'control_banneds'"}class="active"{/if}><a href="/control/banneds">Usuarios banneados</a></li>
+                    <li role="presentation"><a href="#">Censuras</a></li>
+                </ul>
+            </div>
+        {/if}
+        
+        {if="$section == 'posts' && $subsection == 'home' && HOME_NOTIFICACIONES"}
+        <div id="news_bar" class="hide container">
+            
+        </div>
+          {if="isset($notificaciones_home)"}
+          <script>
+            var GRAL_Notificaciones = {$notificaciones_home};
+          </script>
+          {else}
+          <script>
+            var GRAL_Notificaciones = [];
+          </script>
+          {/if}
+        {/if}
+        <div id="main_content" class="container {if="$glberror"}error{/if}" {if="$subsection == 'profile_view'"}class="profileSection"{/if}>

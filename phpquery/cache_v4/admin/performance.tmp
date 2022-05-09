@@ -1,0 +1,48 @@
+            <div class="col-md-10">
+                <form method="post">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Performance (Rendimiento)<i class="mpIcon viewed right"></i></div>
+                    <div class="panel-body">
+                        <?php if(isset($saved)){ ?>
+                        <div class="no-comments-voidloop">
+                            Debes reabrir la ventana para que el nucleo del sistema cargue las nuevas constantes.
+                        </div>
+                        <?php } else { ?>
+                      <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Opcion</th>
+                                <th>Valor</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Autocompletado</td><td><input type="checkbox" class="switchable" name="autocomplete" <?php if(AUTOCOMPLETE_PARTIALS){ ?>checked="checked"<?php } ?>/></td><td>Si esto es activado, se generarán consultas para sugerir un autocompletado donde corresponda (por ejemplo al escribir un nick en los mensajes privados), esto genera una carga extra en el servidor/script, por lo que si tiene problemas de rendimiento recomendamos desactivarlo.</td>
+                            </tr>
+                            <tr>
+                                <td>Limite de busqueda</td><td><input type="text" name="searchLimit" value="<?=SEARCHER_LIMIT;?>"/></td><td>Establece el limite de resultados de una busqueda (cuanto más grande, más consumo de recursos habrá).</td>
+                            </tr>
+                            <tr>
+                                <td>Buscar relacionados</td><td><input type="checkbox" class="switchable" name="searchRelateds" <?php if(SEARCH_RELATEDS){ ?>checked="checked"<?php } ?>/></td><td>Si esto se activa, el script buscará relacionados al entrar a un post, (utilizando el titulo como patrón de busqueda), si esto es desactivado, el script obtendrá al azar una cantidad de post de la misma categoría para mostrarlos. Tenga en cuenta que la busqueda en cada post genera una carga importante sobre el server/script.</td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad de relacionados</td><td><input type="text" name="relatedsCantidad" value="<?=RELATEDS_CANTIDAD;?>"/></td><td>cuanto más grande este numero, más carga sobre el server habrá, pero la lista de relacionados (dentro de los post) será proporcionalmente más grande.</td>
+                            </tr>
+                            <tr>
+                                <td>Recachear relacionados</td><td><input type="text" name="recacheRelateds" value="<?=RECACHEAR_RELATEDS;?>"/></td><td>Establece el tiempo antes de recachear relacionados en segundos, esto reduce conciderablemente el consumo de recursos cuanto más tiempo se establezca para recachear.</td>
+                            </tr>
+                            <tr>
+                                <td>Recachear posts</td><td><input type="checkbox" class="switchable" name="recachearPosts" <?php if(RECACHEAR_POSTS){ ?>checked="checked"<?php } ?>/></td><td>Si esto se activa, se ignorará el caché de bbcodes de los post, esto aumenta considerablemente el consumo de recursos inneceseariamente.</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      <?php } ?>
+                    <hr />
+                      <input type="password" name="adminPass" placeholder="Global Kernell Password" /> <b>** OBLIGATORIO</b><button type="submit" class="btn btn-verde pull-right" style="display: inline-block;">Guardar</button>
+                    </div>
+                </div>
+                </form>
+              </div>
+            
+            </div>

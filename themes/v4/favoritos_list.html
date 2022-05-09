@@ -1,0 +1,46 @@
+           
+            
+              <div class="col-md-10">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Lista de post en favoritos  <button class="btn btn-azul btn-mini" id="vaciarFavoritos" style="float:right;">Vaciar Favoritos</button></div>
+                  {if="empty($favsList)"}
+                    <div class="panel-body">
+                      <div class="empty-data">No tienes favoritos</div>
+                    </div>
+                    {else}
+                    
+                    <table class="table msglistUL">
+                      <thead>
+                        <tr>
+                          <!--<td>#</td>-->
+                          <td>Nombre</td>
+                          <td>Fecha</td>
+                          <td>Administrar</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {loop=$favsList as $post}
+                        <tr id="recordFavorito-{$post->id_post}">
+                          <!--<td>
+                            {$post->id_post}
+                          </td>-->
+                          <td>
+                            <a href="/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}">{$post->titulo}</a>
+                          </td>
+                          <td>
+                            {$post->getFecha()}
+                          </td>
+                          <td>
+                            <button class="btn btn-verde btn-mini quitarFavorito" data-target="{$post->id_post}">Quitar</button>
+                            {if="$post->id_usuario == $me->id_usuario"}<button class="btn btn-rojo btn-mini borrarPost" data-target="{$post->id_post}">Borrar Post</button>{/if}
+                          </td>
+                        </tr>
+                        {/loop}
+                      </tbody>
+                    </table>
+                    {/if}
+                </div>
+              </div>
+              
+            </div>
+            

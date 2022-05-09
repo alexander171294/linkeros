@@ -1,0 +1,17 @@
+{
+    "ptsMPs": 2,
+    "ptsBorrar": 1,
+    "ptsBorrador": 3,
+    "ptsIgnorar": 1,
+    "ptsBannear": 2,
+    "history": true,
+    "iptables": true,
+    "topMejores": true,
+    "DInTop": 7,
+    "autoMod": true,
+    "countDenuncias": 3,
+    "negativosComments": -5,
+    "antifloodPost": 60,
+    "antifloodComment": 30
+    
+}

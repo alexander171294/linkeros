@@ -1,0 +1,17 @@
+            <div class="row">
+              
+              <div class="col-md-2">
+                <div class="panel panel-grey">
+                  <div class="panel-heading panelImportantRecolor">Opciones</div>
+                  <div class="panel-body">
+                    <label>Categorias:</label>
+                    <ul class="periodo-ul">
+                      <?php foreach($cateList as $cate){ ?>
+                      <li <?php if($triseccion == $cate->id_categoria){ ?>class="active"<?php } ?>><a href="/favoritos-<?=$cate->id_categoria;?>" style="<?php if($triseccion == $cate->id_categoria){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;"><?=$cate->nombre_categoria;?></a></li>
+                      <?php } ?>
+                      <li><hr /></li>
+                      <li <?php if($triseccion == 1){ ?>class="active"<?php } ?>><a href="/favoritos" style="<?php if($triseccion == 1){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Todos</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>

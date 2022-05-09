@@ -1,0 +1,299 @@
+.mce-toolbar-grp{
+    height: 26px;
+    padding: 5px;
+    background: #3a3a3a;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #1f1f1f;
+}
+.mce-btn, .mce-btn:hover, .mce-btn.mce-active, .mce-btn.mce-active:hover{
+    background: transparent;
+    border:none;
+}
+.mce-btn button{
+    width: 25px!important;
+    height: 26px!important;
+}
+
+.mce-btn i.mce-ico{
+    width: 25px;
+    height: 26px;
+    margin-top: -6px;
+    margin-left: -7px;
+    background-image: url('../images/bbcodes-addpost.png');
+    background-size: auto;
+}
+.mce-statusbar{
+    display: none;
+}
+.mce-btn-group, .mce-btn-group:not(:first-child){
+    border:none;
+    margin-left: 8px;
+}
+/* bold */
+.mce-i-bold{
+    background-position: 0 -78px;
+}
+.mce-i-bold:hover{
+    background-position: -25px -78px;
+}
+.mce-btn.mce-active .mce-i-bold{
+    background-position: -50px -78px;
+}
+.mce-i-bold:before {
+    content: "";
+}
+/* italic */
+.mce-i-italic{
+    background-position: 0 -104px;
+}
+.mce-i-italic:hover{
+    background-position: -25px -104px;
+}
+.mce-btn.mce-active .mce-i-italic{
+    background-position: -50px -104px;
+}
+.mce-i-italic:before {
+    content: "";
+}
+/* underline */
+.mce-i-underline{
+    background-position: 0 -312px;
+}
+.mce-i-underline:hover{
+    background-position: -25px -312px;
+}
+.mce-btn.mce-active .mce-i-underline{
+    background-position: -50px -312px;
+}
+.mce-i-underline:before {
+    content: "";
+}
+/* alignleft */
+.mce-i-alignleft{
+    background-position: 0px 0px;
+}
+.mce-i-alignleft:hover{
+    background-position: -25px 0px;
+}
+.mce-btn.mce-active .mce-i-alignleft{
+    background-position: -50px 0px;
+}
+.mce-i-alignleft:before {
+    content: "";
+}
+/* aligncenter */
+.mce-i-aligncenter{
+    background-position: 0px -26px;
+}
+.mce-i-aligncenter:hover{
+    background-position: -25px -26px;
+}
+.mce-btn.mce-active .mce-i-aligncenter{
+    background-position: -50px -26px;
+}
+.mce-i-aligncenter:before {
+    content: "";
+}
+/* alignright */
+.mce-i-alignright{
+    background-position: 0px -52px;
+}
+.mce-i-alignright:hover{
+    background-position: -25px -52px;
+}
+.mce-btn.mce-active .mce-i-alignright{
+    background-position: -50px -52px;
+}
+.mce-i-alignright:before {
+    content: "";
+}
+/* colorbutton forecolor */
+.mce-i-forecolor{
+    background-position: 0px -338px;
+}
+.mce-i-forecolor:hover{
+    background-position: -25px -338px;
+}
+.mce-btn.mce-active .mce-i-forecolor{
+    background-position: -50px -338px;
+}
+.mce-i-forecolor:before {
+    content: "";
+}
+.mce-colorbutton .mce-preview{
+    margin-left: -8px;
+    margin-top: 4px;
+    height: 4px;
+}
+.mce-colorbutton:hover .mce-open
+{
+    border: none;
+    
+}
+.mce-colorbutton .mce-open
+{
+    margin-left: -25px;
+    position: absolute;
+}
+.mce-colorbutton .mce-open .mce-caret{
+    opacity: 0;
+}
+/* link */
+.mce-i-link{
+    background-position: 0px -234px;
+}
+.mce-i-link:hover{
+    background-position: -25px -234px;
+}
+.mce-btn.mce-active .mce-i-link{
+    background-position: -50px -234px;
+}
+.mce-i-link:before {
+    content: "";
+}
+/* image */
+.mce-i-image{
+    background-position: 0px -208px;
+}
+.mce-i-image:hover{
+    background-position: -25px -208px;
+}
+.mce-btn.mce-active .mce-i-image{
+    background-position: -50px -208px;
+}
+.mce-i-image:before {
+    content: "";
+}
+/* youtube */
+.mce-i-youtube{
+    background-position: 0px -130px;
+}
+.mce-i-youtube:hover{
+    background-position: -25px -130px;
+}
+.mce-btn.mce-active .mce-i-youtube{
+    background-position: -50px -130px;
+}
+/* locked */
+.mce-i-locked{
+    background-position: 0px -390px;
+}
+.mce-i-locked:hover{
+    background-position: -25px -390px;
+}
+.mce-btn.mce-active .mce-i-locked{
+    background-position: -50px -390px;
+}
+/* code */
+.mce-i-code{
+    background-position: -0px -416px;
+}
+.mce-i-code:hover{
+    background-position: -25px -416px;
+}
+.mce-btn.mce-active .mce-i-code{
+    background-position: -50px -416px;
+}
+.mce-i-code:before {
+    content: "";
+}
+/* quote */
+.mce-i-quote{
+    background-position: 0px -260px;
+}
+.mce-i-quote:hover{
+    background-position: -25px -260px;
+}
+.mce-btn.mce-active .mce-i-quote{
+    background-position: -50px -260px;
+}
+.mce-i-quote:before {
+    content: "";
+}
+/* FONTS SIZES, FONT FAMILY*/
+#mceu_7-open .mce-txt, #mceu_8-open .mce-txt{
+    display: none;
+}
+#mceu_7-open .mce-caret, #mceu_8-open .mce-caret{
+    display: none;
+}
+#mceu_7-open
+{
+    background: url('../images/bbcodes-addpost.png');
+    padding: 0px;
+    background-position: 0 -364px;
+}
+#mceu_7-open:hover
+{
+    background-position: -25px -364px;
+}
+.mce-active #mceu_7-open{
+    background-position: -50px -364px;
+}
+#mceu_8-open
+{
+    background: url('../images/bbcodes-addpost.png');
+    padding: 0px;
+    background-position: 0 -286px;
+}
+#mceu_8-open:hover
+{
+    background-position: -25px -286px;
+}
+.mce-active #mceu_8-open{
+    background-position: -50px -286px;
+}
+/* BOXES */
+.mce-foot{
+    display: none;
+}
+.mce-window-head{
+    background: url(../images/btn-bg.gif) repeat-x left top #2e8af5;
+    border: solid 1px #003a74;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+    text-shadow: 0 1px 0 #003851;
+}
+button.mce-close{
+    background: url(../images/mdclose.png) no-repeat;
+    margin-top: 2px;
+    color: transparent!important;
+    width: 19px;
+}
+.mce-window-head div.mce-title{
+    color: white;
+    text-align: left;
+    text-shadow: 0 1px 0 #003851;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px 4px 0px 0px;
+}
+.mce-panel.mce-window{
+    border: solid 3px #b5af9f;
+    box-shadow: 0 0 25px #333;
+    text-align: left;
+    border-radius: 4px;
+    background-color: #f4f1e9;
+}
+.mce-container-body.mce-abs-layout{
+    background: #f4f1e9;
+}
+.mce-tab{
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+    background: #49799b;
+    border-right: solid 2px #49799b;
+}
+.mce-tab.mce-active, .mce-tab:hover{
+    background: #f4f1e9;
+    color: #555;
+    font-weight: 100;
+    text-shadow: none;
+    border-left: none;
+}
+.mce-tabs{
+    background: #49799b;
+}

@@ -1,0 +1,19 @@
+{
+    "espectroTiempoOnline": 1500,
+    "startUserCount": 1,
+    "maxListHome": 15,
+    "maxPostList": 40,
+    "box": false,
+    "boxTitulo": "Registro!",
+    "boxContenido": "Estamos comprobando el correcto funcionamiento del sistema de emails en el registro, si tiene algún problema por favor contacte a un administrador.",
+    "statsHistorical": true,
+    "statsTimespectro": 48,
+    "topHomeCantidad": 15,
+    "tagsize1": 40,
+    "tagsize2": 26,
+    "tagsize3": 19,
+    "tagsize4": 10,
+    "tagsize5": 5,
+    "tags": 15,
+    "noticias": true
+}

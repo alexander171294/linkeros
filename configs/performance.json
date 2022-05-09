@@ -1,0 +1,8 @@
+{
+    "autocomplete": true,
+    "searchLimit": 10,
+    "searchRelateds": false,
+    "relatedsCantidad": 6,
+    "recacheRelateds": 43200,
+    "recachearPosts": false
+}

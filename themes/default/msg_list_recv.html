@@ -1,0 +1,55 @@
+           
+            
+              <div class="col-md-10">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Mensajes privados recibidos <i class="note-icons listado right"></i></div>
+                    {if="empty($mpsList)"}
+                    <div class="panel-body">
+                      <div class="empty-data">No tienes mensajes privados</div>
+                    </div>
+                    {else}
+                    <table class="table msglistUL">
+                      <thead>
+                        <tr>
+                          <td>#</td>
+                          <td>Asunto</td>
+                          <td>Emisor</td>
+                          <td>Fecha</td>
+                          <td>Administrar <button class="btn btn-azul btn-mini" id="vaciarSPEC" style="float:right;">Vaciar</button></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {loop=$mpsList as $mp}
+                        <tr {if="$mp->visto == 0"}style="background-color: #C7FFD8;"{/if} id="recordMP-{$mp->id_mensaje}">
+                          <td>
+                            {if="$mp->visto == 0"}
+                              <span title="Nuevo mensaje" class="mpIcon new"></span>
+                            {/if}
+                            {if="$mp->visto == 1"}
+                              <span title="Visto" class="mpIcon viewed"></span>
+                            {/if}
+                            {if="$mp->visto == 2"}
+                              <span title="Respondido" class="mpIcon responsed"></span>
+                            {/if}
+                          </td>
+                          <td>
+                            <a href="/mensajes/ver-{$mp->id_mensaje}">{$mp->asunto_mensaje}</a>
+                          </td>
+                          <td>
+                            <a href="/usuario/{$mp->user()->id_usuario}/{$mp->user()->nick_seo}">{$mp->user()->nick}</a>
+                          </td>
+                          <td>
+                            {$mp->getFecha()}
+                          </td>
+                          <td>
+                            <button class="btn btn-verde btn-mini jsLink" data-target="/mensajes/ver-{$mp->id_mensaje}">Ver</button>
+                            <button class="btn btn-rojo btn-mini borrarMP" data-id="{$mp->id_mensaje}">Borrar</button>
+                          </td>
+                        </tr>
+                        {/loop}
+                      </tbody>
+                    </table>
+                    {/if}
+                </div>
+              </div>
+        </div>

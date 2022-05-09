@@ -1,0 +1,11 @@
+{
+    "cacheado": true,
+    "cacheHoy": true,
+    "cacheAyer": true,
+    "cacheSemana": true,
+    "cacheMes": true,
+    "cacheMesAnterior": true,
+    "cacheAnio": true,
+    "cacheHistorico": false,
+    "cantidad": 15
+}

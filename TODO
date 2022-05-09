@@ -1,0 +1,47 @@
+[Otras mejoras]
+Ver editor en MP.
+post repetidos en recomendados post
+
+// puntos catalogo:
++1 por sugerir post
++10 por un post que te agreguen al catalogo
++1 por aprobar un post para el catálogo
++3 por reportar un post del catálogo
+
+// aportes catalogo: (moderación)
++1 por aprobar un post para el catálogo
++1 por un post que te agreguen al catálogo
++1 por eliminar un post del catálogo
+
+actualizar version.html
+
+evitar acceso desde pais que no sea registrado
+quitar para los usuarios
+
+próxima versión:
+revisión/optimización de controladores::
+{
+    borradores
+    bot
+    buscador
+    catalogos
+    comentarios
+    config
+    control
+    cron
+    edit_account
+    estaticas
+    favoritos
+    installer
+    mensajes
+    notificaciones
+    post_moderate
+    posts
+    seguidores
+    theme
+    tops
+    uac
+    user_moderate
+    users
+}
+reubicación de controladores

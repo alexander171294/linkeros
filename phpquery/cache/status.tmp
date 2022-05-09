@@ -1,0 +1,35 @@
+            <!-- CONTENIDO -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Estado del servicio.</div>
+                  <div class="panel-body" style="text-align:justify;font-size:12px">
+                    <center><strong style="font-size: 14px;">Acerca del estado del servicio</strong></center>
+                    <p>En esta página se establecerá la información de la configuración del script basada en el archivo de constantes, esta información es actualizada en vivo.</p>
+                    
+                    <hr />
+                    <center><strong style="font-size: 14px;">Secciones activas</strong></center>
+                    <ol>
+                      <li>Registro <?php if(SECCION_REGISTRO){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Login <?php if(SECCION_LOGIN){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Sistema de novatos <?php if(SECCION_NOBS){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Destacados (home) <?php if(SECCION_DESTACADOS){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>TOP <?php if(SECCION_TOP){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Buscador <?php if(SECCION_BUSCADOR){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Sistema de mensajes privados <?php if(SECCION_MPS){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Perfil <?php if(SECCION_PERFIL){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Post <?php if(SECCION_AGREGAR_POST){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Notas de la version <?php if(SECCION_NOTAS_VERSION){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Notificaciones <?php if(SECCION_NOTIFICACIONES){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Categorias <?php if(SECCION_CATEGORIAS){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Borradores <?php if(SECCION_BORRADORES){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Favoritos <?php if(SECCION_FAVORITOS){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Historial <?php if(SECCION_HISTORY){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                      <li>Seccion de estado <?php if(SECCION_STATUS){ ?><span style="color: #199919;">Activo</span><?php } else { ?><span style="color:red;">Inactivo</span><?php } ?></li>
+                    </ol>
+                    <hr />
+                    
+                  </div>
+                </div>
+              </div>
+            </div>

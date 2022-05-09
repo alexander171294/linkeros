@@ -1,0 +1,52 @@
+            <!-- CONTENIDO -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Reporte de seguridad.</div>
+                  <div class="panel-body" style="text-align:justify;font-size:12px">
+                    <center><strong style="font-size: 14px;">Acerca del reporte de seguridad</strong></center>
+                    <p>En esta página se listarán las mejoras del sitio en materia de seguridad y un reporte de intentos de ataques fallidos.</p>
+                    
+                    <hr />
+                    <center><strong style="font-size: 14px;">Mejoras de seguridad</strong></center>
+                    <ol>
+                      <li><b>[23/02/2017]</b> - Auditoria del ex-controlador Posts (dividido en 7)<br />
+                        <ol>
+                          <li>posts_home.php [Optimized]</li>
+                          <li>posts_novatos.php [Optimized]</li>
+                          <li>posts_catlist.php [Optimized]</li>
+                          <li>posts_taglist.php [Optimized]</li>
+                          <li>posts_agregar.php [Optimized][<a href="#sp001" style="color: #bf0303;">Security Patch #001</a>]</li>
+                          <li>posts_ver.php [Optimized]</li>
+                          <li>error_control.php [Optimized]</li>
+                        </ol>
+                      </li>
+                      <li><b>[10/12/2016]</b> - Revisión de permisos de usuarios y accesos en todos los controladores</li>
+                    </ol>
+                    <hr />
+                    
+                    <center><strong style="font-size: 14px;">Últimos ataques prevenidos</strong></center>
+                    <ol>
+                      <li>-</li>
+                    </ol>
+                    <hr />
+                    
+                    <center><strong style="font-size: 14px;">Parches de seguridad</strong></center>
+                    <ol>
+                      <li id="sp001">Se agregó la comprobación de existencia de  categoría en agregar post</li>
+                    </ol>
+                    <hr />
+                    
+                    <center><strong style="font-size: 12px;">Hora actual del servidor {$timenow}</strong></center>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!---
+            //////// SECURITY PATCH #001 /////////
+            // Date: 
+            // Security Issue: 
+            
+            /////////////////////////////////////
+            -->

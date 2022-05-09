@@ -1,0 +1,134 @@
+.visible-xxs
+{
+    display: none;
+}
+@media(max-width: 1079px)
+{
+    #menu_principal ul.menu_derecho
+    {
+        display: block;
+        float: none;
+        text-align: right;
+    }
+    #menu_principal ul.menu_izquierdo
+    {
+        display: block;
+    }
+}
+@media(max-width: 769px)
+{
+    body{
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+    #menu_principal ul.menu_derecho{
+        float: none;
+        text-align: left;
+        display: block;
+    }
+    #menu_principal ul.menu_derecho #loginbox{
+        width: 50%;
+        right: 0px;
+        left: 10px;
+    }
+    #menu_principal ul.menu_izquierdo{
+        display: block;
+        float: none;
+    }
+    #menu_principal #anniversary{
+        position: relative;
+        margin-top: -15px;
+        margin-left: -25px;
+        vertical-align: top;
+    }
+    .catalogBlock{
+        max-width: 150px;
+        margin: 0 auto;
+    }
+    .fix-zindex{
+        z-index: 99;
+    }
+    .panel-comentario .comment-thumbnail img{
+        position: initial;
+        margin-left: 0px;
+        float: right;
+        width: 50px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .blockSearchFixed
+    {
+        position: absolute;
+        margin-left: 100px;
+    }
+    .resultadoBusqueda
+    {
+        margin-top: 80px;
+    }
+    
+    .dobleMenuUL input, .dobleMenuUL textarea
+    {
+        width: 90%!important;
+        height: 30px;
+        margin: 5px auto;
+        border: 1px solid gray;
+        display: block;
+        padding-left: 5px;
+    }
+    
+    ul.MainListPost a
+    {
+        font-size: 15px!important;
+    }
+    
+    ul.lastComments li
+    {
+        font-size: 10pt;
+    }
+}
+@media(max-width: 414px)
+{
+    #seleccionar_categoria
+    {
+        text-align: center;
+        margin-bottom: 5px;
+        border-top: 1px solid #b7b6b6;
+        padding-top: 5px;
+    }
+    #menu_principal ul.menu_derecho #loginbox
+    {
+        width: 90%;
+    }
+    ul.menu_derecho li, ul.menu_derecho li a, ul.menu_izquierdo li, ul.menu_izquierdo li a{
+        display: block;
+        padding: 5px;
+    }
+    .movtab{
+        display: inline-block!important;
+        text-align: center;
+        padding: 15px!important;
+    }
+    #menu_principal ul.menu_derecho#menuDerecho, ul.menu_izquierdo#menuIzquierdo {
+        display: none;
+    }
+    #menu_principal ul.menu_derecho#menuDerecho.active, ul.menu_izquierdo#menuIzquierdo.active {
+        display: block;
+    }
+    .movileContainer
+    {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .blockSearchFixed
+    {
+        margin-left: 0px;
+    }
+    .visible-xxs
+    {
+        display: block;
+    }
+    .menu_derecho .visible-xxs{
+        display: inline-block;
+    }
+}

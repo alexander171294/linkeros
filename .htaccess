@@ -1,0 +1,33 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^linkeros.com [NC]
+RewriteRule ^(.*)$ http://www.linkeros.com/$1 [L,R=301]
+
+RewriteRule ^catalogos/cat([0-9]+)-i([0-9]+)-c([0-9]+)-p([0-9]+)$ /?action=catalogos&categoria=$1&idioma=$2&calidad=$3&page=$4
+RewriteRule ^catalogos/([a-zA-Z0-9_-]+)$ /?action=catalogos_$1
+RewriteRule ^catalogos/([a-zA-Z0-9_-]+)/p([0-9]+)$ /?action=catalogos_$1&page=$2
+RewriteRule ^top/([a-zA-Z0-9_-]+)$ /?action=top_$1
+RewriteRule ^control/([a-zA-Z0-9_-]+)$ /?action=control_$1
+RewriteRule ^control/tour/([0-9]+)$ /?action=control_tour&page=$1
+RewriteRule ^mensajes/ver-([0-9]+)$ /?action=mensajes_ver&id=$1
+RewriteRule ^mensajes/([a-zA-Z0-9_-]+)$ /?action=mensajes_$1
+RewriteRule ^config/([a-zA-Z0-9_-]+)$ /?action=config_$1
+RewriteRule ^account/([a-zA-Z0-9_-]+)$ /?action=account_$1
+RewriteRule ^borradores/([a-zA-Z0-9_-]+)$ /?action=borradores_$1
+RewriteRule ^favoritos-([0-9]+)$ /?action=favoritos&cate=$1
+RewriteRule ^favoritos/([a-zA-Z0-9_-]+)$ /?action=favoritos_$1
+RewriteRule ^usuario/([0-9]+)/([a-zA-Z0-9_-]+)$ /?action=ver_perfil&id=$1
+RewriteRule ^categoria/([0-9]+)/([a-zA-Z0-9_-]+)$ /?action=categoria_lista&id=$1
+RewriteRule ^edit_post/([0-9]+)$ /?action=edit_post&id=$1
+RewriteRule ^posts/([0-9]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ /?action=ver_post&id=$1
+RewriteRule ^page/([0-9]+)$ /?action=home&page=$1
+RewriteRule ^novatos/page/([0-9]+)$ /?action=novatos&page=$1
+RewriteRule ^categoria/([0-9]+)/page/([0-9]+)$ /?action=categoria_lista&id=$1&page=$2
+RewriteRule ^tag/([0-9]+)-([a-zA-Z0-9_-]+)$ /?action=tag_lista&id=$1
+RewriteRule ^([a-zA-Z0-9_]+)$ /?action=$1
+RewriteRule ^([a-zA-Z0-9_]+)/([0-9]+)$ /?action=$1&page=$2
+
+ErrorDocument 404 /index.php?action=e404
+ErrorDocument 403 /index.php?action=e404
+ErrorDocument 500 /themes/default/e500.html

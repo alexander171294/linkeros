@@ -1,0 +1,309 @@
+            <!-- CONTENIDO -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel panel-grey">
+                  <div class="panel-heading">Guía de Catálogo</div>
+                  <div class="panel-body" style="text-align:justify;font-size:12px">
+                    <h2>Indice</h2>
+                    <p>
+                      <ol>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#idiomas">Idiomas</a></li>
+                        <li><a href="#calidades">Grupos</a></li>
+                      </ol>
+                    </p>
+                    <h2 id="catalogo">Catálogo</h2>
+                    <p>
+                      <b>* ¿Qué es el catálogo?</b><br />
+                      El catálogo es una sección del sitio diseñada para catalogar y ordenar el contenido del sitio, además de mantener los enlaces de descarga al día.
+                    </p>
+                    <p>
+                      <b>* ¿Para qué me sirve?</b><br />
+                      Puedes buscar en el catalogo o mirar los post ordenados, además podrás ver los post mucho más actualizados que en el resto del sitio.
+                    </p>
+                    <p>
+                      <b>* ¿Qué ventajas tiene frente al buscador de post?</b><br />
+                      En primera instancia el contenido se ve en formato cátalogo con carátulas, en segunda instancia, se puede filtrar por idioma, categoría y calidad. Para continuar, las series en el catalogo están agrupadas por temporada y número de episodio, de esta forma se agrupan varios post en uno. Para terminar está enfocado en mantener el orden y en vez de mostrar varios post para un solo objeto, se muestra un solo objeto con el post más actualizado (dentro de lo posible).
+                    </p>
+                    <p>
+                      <b>* ¿Qué son los puntos del catálogo?</b><br />
+                      Cuando un post es agregado al catálogo, se generan puntos del catalogo para el autor del post, estos puntos son 10 + la sumatoria de recomendaciones para agregar ese post al catálogo.<br />
+                      Esos puntos se suman también a la cantidad total de puntos en la cuenta.
+                    </p>
+                    <p>
+                      <b>* ¿Qué son los post en el catálogo?</b><br />
+                      Son la cantidad de post tuyos dentro del catálogo.
+                    </p>
+                    <p>
+                      <b>* ¿Qué son los aportes al catálogo?</b><br />
+                      Denuncias de post en el catálogo, al agregar un post al catálogo, al sugerir un post para el catálogo (se suma cuando es agregado), al eliminar un post del catálogo (si puedes moderar el catálogo). En esencia cualquier acción que realices y aporte al catálogo.
+                    </p>
+                    <p>
+                      <b>* ¿Quien puede moderar el catálogo?</b><br />
+                      Los usuarios con rango Administrador, Moderador, Great Users, y aquellos usuarios que tengan al menos 250 puntos en el catálogo.
+                    </p>
+                    <p>
+                      <b>* ¿Para qué quiero ser moderador del catálogo?</b><br />
+                      Aquellas personas que moderan el catálogo son evaluados para acceder a rangos de moderador del sitio.
+                    </p>
+                    <p>
+                      Categorías disponibles en el catálogo:<br />
+                      <ol>
+                        <li><a href="/categoria/5/androidapk" style="color:#0041ff;">Android APK</a></li>
+                        <li><a href="/categoria/34/tutorialescursos" style="color:#0041ff;">Tutoriales y Cursos</a></li>
+                        <li><a href="/categoria/8/programas" style="color:#0041ff;">Programas</a></li>
+                        <li>Juegos <a href="/categoria/17/juegos-pc" style="color:#0041ff;">PC</a> y <a href="/categoria/18/juegos-consolas" style="color:#0041ff;">Consola</a></li>
+                        <li>Series <a href="/categoria/35/series-descargables" style="color:#0041ff;">Descargables</a> y <a href="/categoria/41/series-online" style="color:#0041ff;">Online</a></li>
+                        <li>Películas <a href="/categoria/39/peliculas-descargas" style="color:#0041ff;">Descargables</a> y <a href="/categoria/38/peliculas-online" style="color:#0041ff;">Online</a></li>
+                        <li><a href="/categoria/44/anime" style="color:#0041ff;">Anime</a></li>
+                      </ol>
+                    </p>
+                    <h2 id="idiomas">Idiomas</h2>
+                    <p>
+                      Los siguientes idiomas se encuentran disponibles en todos los objetos del catálogo:
+                      <ol>
+                        <li><i class="iCatlg es" title="Idioma: Espa&ntilde;ol" style="display: inline-block"></i> Espa&ntilde;ol (Espa&ntilde;a)</li>
+                        <li><i class="iCatlg en" title="Idioma: Ingl&eacute;s" style="display: inline-block"></i> Ingl&eacute;s</li>
+                        <li><i class="iCatlg vos" title="Idioma: Ingl&eacute;s Subtitulado" style="display: inline-block"></i> Ingl&eacute;s Subtitulado</li>
+                        <li><i class="iCatlg la" title="Idioma: Latino" style="display: inline-block"></i> Latino (es-AR, es-MX, etc.)</li>
+                        <li><i class="iCatlg jp" title="Idioma: Japon&eacute;s" style="display: inline-block"></i> Japon&eacute;s</li>
+                        <li><i class="iCatlg jpsub" title="Idioma: Japon&eacute;s Subtitulado" style="display: inline-block"></i> Japon&eacute;s Subtitulado (En espa&ntilde;ol o latino)</li>
+                        <li><i class="iCatlg br" title="Idioma: Portugu&eacute;s" style="display: inline-block"></i> Portugu&eacute;s</li>
+                        <li><i class="iCatlg other" title="Idioma: Otro" style="display: inline-block"></i> Otro (ninguno de los anteriores)</li>
+                      </ol>
+                      También puedes ver el nombre del idioma dejando el mouse por ensima del icono dentro del catálogo.
+                    </p>
+                    <h2 id="calidades">Grupos</h2>
+                    <p>
+                      Las siguientes son las Calidades/Grupos disponibles para cada categoría:
+                    </p>
+                    <p>
+                      <h4>Android APK</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ juegos" title="Juegos" style="display: inline-block"></i> <b>Juegos</b>:
+                          Esta categoría agrupa todos los juegos de android (APK), etc.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ herramientas" title="Herramientas" style="display: inline-block"></i> <b>Herramientas</b>:
+                          Esta categoría agrupa todas las herramientas, utilidades, etc. para android (en formato APK).
+                        </li>
+                        <li>
+                          <i class="iCatlgQ social" title="Social" style="display: inline-block"></i> <b>Social</b>:
+                          Esta categoría agrupa todas las APK/aplicaciones relacionadas a lo social.
+                        </li>
+                      </ol>
+                      <h4>Tutoriales y cursos</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ presentation" title="Demo/Presentaci&oacute;n" style="display: inline-block"></i> <b>Demo/Presentaci&oacute;n</b>:
+                          Aquí se agrupan los tutoriales y cursos que son de presentación o demostraciones (no completos) solo para dar a conocer el curso.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ introductorio" title="Dificultad introductoria" style="display: inline-block"></i> <b>Dificultad introductoria</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ normal" title="Dificultad normal" style="display: inline-block"></i> <b>Dificultad normal</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ medio" title="Dificultad media" style="display: inline-block"></i> <b>Dificultad media</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ avanzado" title="Dificultad avanzada" style="display: inline-block"></i> <b>Dificultad avanzada</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ pack" title="Pack variado" style="display: inline-block"></i> <b>Pack variado</b>:
+                          Aquí se agrupan los tutoriales y cursos que tienen varias dificultades en un mismo pack.
+                        </li>
+                      </ol>
+                      <h4>Programas</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ demo" title="Demo" style="display: inline-block"></i> <b>Demo</b>:
+                          Demo/Demostración, categoría que agrupa programas incompletos o versiones de prueba.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ full" title="Full" style="display: inline-block"></i> <b>Full</b>:
+                          Programas completos, generalmente imagenes de discos originales, con instalador incluido + crack/serial. Completamente utilizable como original
+                        </li>
+                        <li>
+                          <i class="iCatlgQ portable" title="Portable" style="display: inline-block"></i> <b>Portable</b>:
+                          Programas sin instalador que pueden ser utilizados posterior a descargar sin instalación.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ freeware" title="Freeware" style="display: inline-block"></i> <b>Freeware</b>:
+                          Programas que son gratuitos directamente ofrecidos por el desarrollador.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ abandonware" title="Abandonware" style="display: inline-block"></i> <b>Abandonware</b>:
+                          Programas que son obsoletos y su desarrollador no mantiene.
+                        </li>
+                      </ol>
+                      <h4>Juegos PC</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ demo" title="Demo" style="display: inline-block"></i> <b>Demo</b>:
+                          Demo/Demostración, categoría que agrupa juegos incompletos o versiones de prueba.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ full" title="Full" style="display: inline-block"></i> <b>Full</b>:
+                          Juegos completos, generalmente imagenes de discos originales, con instalador incluido + crack/serial. Completamente jugable como original
+                        </li>
+                        <li>
+                          <i class="iCatlgQ ripped" title="Ripped" style="display: inline-block"></i> <b>Ripped</b>:
+                          Juegos rippeados, juegos a los que se le quitaron partes para comprimirlo, y contenido extra.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ repack" title="Repack" style="display: inline-block"></i> <b>Repack</b>:
+                          Juegos rippeados a los que se les creó un instalador custom, o secciones del juego customizadas (videos, idioma, etc.).
+                        </li>
+                        <li>
+                          <i class="iCatlgQ portable" title="Portable" style="display: inline-block"></i> <b>Portable</b>:
+                          Juegos sin instalador que pueden ser jugados posterior a descargar sin instalación.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ remaster" title="Remaster HD" style="display: inline-block"></i> <b>Remaster HD</b>:
+                          Juegos viejos que fueron remasterizados por la empresa añadiendole gráficos/texturas HD. Ésta calidad debe contener solo juegos FULL/RIPPED remasterizados.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ abandonware" title="Abandonware" style="display: inline-block"></i> <b>Abandonware</b>:
+                          Juegos muy viejos que incluso probablemente ya no estén a la venta. (Juegos de los 90')
+                        </li>
+                      </ol>
+                      <h4>Juegos Consola</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ nintendo64" title="Nintendo 64" style="display: inline-block"></i> <b>Nintendo 64</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ playstation" title="PlayStation 1" style="display: inline-block"></i> <b>PlayStation (1)</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ play2" title="PlayStation 2" style="display: inline-block"></i> <b>PlayStation 2</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ xbox" title="Xbox" style="display: inline-block"></i> <b>Xbox</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ gamecube" title="Nintendo Gamecube" style="display: inline-block"></i> <b>Nintendo Gamecube</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ wii" title="Nintendo Wii" style="display: inline-block"></i> <b>Nintendo Wii</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ xbox360" title="Xbox 360" style="display: inline-block"></i> <b>Xbox 360</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ play3" title="PlayStation 3" style="display: inline-block"></i> <b>PlayStation 3</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ play4" title="PlayStation 4" style="display: inline-block"></i> <b>PlayStation 4</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ xbox-one" title="Xbox One" style="display: inline-block"></i> <b>Xbox One</b>
+                        </li>
+                        <li>
+                          <i class="iCatlgQ wiiu" title="Wii U" style="display: inline-block"></i> <b>Wii U</b>
+                        </li>
+                      </ol>
+                      <h4>Series Online/Descargables</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ tvrip" title="TVRip" style="display: inline-block"></i> <b>TVRip</b>:
+                          Episodios de TV, programas, series, y hasta alguna que otra película. La calidad de esto si bien es bastante buena la lograda por nuestros rippers, nunca se iguala a la obtenida por un dvd-rip. Generalmente se hace en formatos que luego puedan ser pasados fácilmente a SVCD o VCD.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ pdtv" title="PDTV/SatRip" style="display: inline-block"></i> <b>PDTV/SatRip</b>:
+                          Capturado desde una emisión digital (por satélite). cuasi-DVD.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ lower" title="Lower" style="display: inline-block"></i> <b>Lower (Inferior)</b>:
+                          Calidad inferior a 480p.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ p480" title="480p" style="display: inline-block"></i> <b>480p</b>:
+                          Calidad basada en la resolución de la imagen, 640x480 píxeles (0,3 Megapixeles).
+                        </li>
+                        <li>
+                          <i class="iCatlgQ p720" title="720p" style="display: inline-block"></i> <b>720p</b>:
+                          Calidad basada en la resolución de la imagen, 1280x720 píxeles (0,9 Megapixeles).
+                        </li>
+                        <li>
+                          <i class="iCatlgQ p1080" title="1080p" style="display: inline-block"></i> <b>1080p</b>:
+                          Calidad basada en la resolución de la imagen, 1920×1080 píxeles (2 Megapixeles). Considerado HDTV. usualmente supone una relación de aspecto widescreen de 16:9
+                        </li>
+                        <li>
+                          <i class="iCatlgQ higgest" title="highest" style="display: inline-block"></i> <b>Highest (Muy Superior)</b>:
+                          Calidad superior a 1080p.
+                        </li>
+                      </ol>
+                      <h4>Películas Online/Descargables</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ cam" title="CAM" style="display: inline-block"></i> <b>CAM</b>:
+                          Grabado en el cine con una cámara de video. El audio es grabado desde el sonido ambiente del cine. Calidad imagen: de muy mala a buena. Calidad sonido: muy mala a regular.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ telesync" title="Telesync" style="display: inline-block"></i> <b>TeleSync (TS)</b>:
+                          Lo mismo que CAM, pero el audio se toma directamente desde un sistema de sonido, ya sean los conectores de audifonos especiales para sordos, o bien, del sistema principal de sonido de la sala (va desde stereo, hasta 6.1 canales). Imagen: de muy mala a buena. Sonido: bueno a muy bueno.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ telecine" title="Telecine" style="display: inline-block"></i> <b>TeleCine (TC)</b>:
+                          Es una copia digital directamente desde los rollos o cartuchos de la película (esas que se proyectan desde el cine). No son muy comunes porque el costo de un equipo de telecine es muy elevado. Desde un telecine se crean las copias en VHS que todos vemos en los videoclubs. NO es una grabación dentro de la sala del cine. Imagen: de buena a muy Buena. Sonido: de bueno a muy bueno.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ screener" title="Screener" style="display: inline-block"></i> <b>Screener (SCR)</b>:
+                          Una cinta pre VHS, enviada a las tiendas de alquiler, y a otros sitios para usos promociónales. Un screener se proporciona en una cinta VHS, y suele estar a 4:3 (pantalla completa) de razón de proporción. El punto malo es un “aviso” (un mensaje que pasa por debajo de la pantalla, con el copyright y el numero de teléfono anti-copias). También, si la cinta tiene cualquier número de serie, o cualquier otra marca que puede llevar a la fuente de la cinta, habrán de ser eliminadas, generalmente con una marca negra en esa sección. Esto solo suele durar unos segundos, pero desafortunadamente en algunas copias esto aparecerá durante toda la película, y puede que sea bastante grande. Dependiendo del equipamiento utilizado, la calidad del screener puede ser desde excelente si se hace desde una cinta MAESTRA, hasta muy mala si se hace desde un VHS muy viejo y una cinta en muy mal estado. La mayoría de los screeners se pasan a VCD, pero unos pocos intentos de SVCD también se han visto, algunos mejores que otros.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ r5" title="R5" style="display: inline-block"></i> <b>R5</b>:
+                          Debido a la gran masificación de la piratería de películas en Rusia se buscó una solución para ponerle fin emitiento copias legales de películas con calidad TELECINE, las más difundidas en ese país. La gran diferencia con un TELECINE normal es que estas releases R5 están creadas con equipos profesionales, lo que les da una muy bena calidad en cuanto a imagen aunque generalmente pobre en audio, pero aún por debajo de las versiones DVD-Screener o DVDRip.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ dvdscr" title="DVD-SCREENER" style="display: inline-block"></i> <b>DVD-Screener (DVDScr)</b>:
+                          Son Películas extraídas de un DVD de promoción (que se le da a los Críticos o a Jurados en los premios), estos a diferencia del DVDRip salen mucho antes, pero suelen tener “leyendas” en la parte inferior de la pantalla, “contadores” (reloj en la parte superior), y hasta en algunos casos puede contener partes Blanco y Negro. Calidad de Imagen: Muy Bueno. Calidad de Sonido: Muy Bueno
+                        </li>
+                        <li>
+                          <i class="iCatlgQ dvdrip" title="DVD-Rip" style="display: inline-block"></i> <b>DVD-Rip</b>:
+                          Es una copia comprimida de un DVD. Tienen muy buena calidad de video y de sonido. Pueden contener audio mp3, ogg, o AC3. Y la definición del video es muy buena en relación a calidad-tamaño del archivo. Gracias a los codecs hoy utilizados y sus avanzados algoritmos se lograron muy buena calidad en estos rippeos.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ dvd-r" title="DVD-R" style="display: inline-block"></i> <b>DVD-R</b>:
+                          Un DVD+-R es simplemente un DVD, es copia generalmente fiel de un original. En ciertos casos pueden omitir menus, o cambiar subtítulos por los de otro idioma. Pero siempre la calidad va a tender a ser la mejor posible. Calidad de imagen y sonido: Exelente
+                        </li>
+                        <li>
+                          <i class="iCatlgQ htdv" title="HTDV" style="display: inline-block"></i> <b>HTDV</b>:
+                          Capturado desde una emisión digital de alta definición. Puede ser hasta de 1920×1080 pixeles. Mejor que DVD
+                        </li>
+                      </ol>
+                      <h4>Anime</h4>
+                      <ol>
+                        <li>
+                          <i class="iCatlgQ lower" title="Lower" style="display: inline-block"></i> <b>Lower (Inferior)</b>:
+                          Calidad inferior a 480p.
+                        </li>
+                        <li>
+                          <i class="iCatlgQ p480" title="480p" style="display: inline-block"></i> <b>480p</b>:
+                          Calidad basada en la resolución de la imagen, 640x480 píxeles (0,3 Megapixeles).
+                        </li>
+                        <li>
+                          <i class="iCatlgQ p720" title="720p" style="display: inline-block"></i> <b>720p</b>:
+                          Calidad basada en la resolución de la imagen, 1280x720 píxeles (0,9 Megapixeles).
+                        </li>
+                        <li>
+                          <i class="iCatlgQ p1080" title="1080p" style="display: inline-block"></i> <b>1080p</b>:
+                          Calidad basada en la resolución de la imagen, 1920×1080 píxeles (2 Megapixeles). Considerado HDTV. usualmente supone una relación de aspecto widescreen de 16:9
+                        </li>
+                        <li>
+                          <i class="iCatlgQ higgest" title="highest" style="display: inline-block"></i> <b>Highest (Muy Superior)</b>:
+                          Calidad superior a 1080p.
+                        </li>
+                      </ol>
+                    </p>
+                    <p>
+                      También puedes ver el nombre de la calidad dejando el mouse por ensima del icono dentro del catálogo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>

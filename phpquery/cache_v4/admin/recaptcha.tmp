@@ -1,0 +1,57 @@
+            <div class="col-md-10">
+                <form method="post">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Recaptcha y FB<i class="mpIcon viewed right"></i></div>
+                    <div class="panel-body">
+                        <?php if(isset($saved)){ ?>
+                        <div class="no-comments-voidloop">
+                            Debes reabrir la ventana para que el nucleo del sistema cargue las nuevas constantes.
+                        </div>
+                        <?php } else { ?>
+                      <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Opcion</th>
+                                <th>Valor</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Recaptcha Key</td><td><input type="text" name="key" value="<?=RECAPTCHA_KEY;?>"/></td><td>Key que usted puede conseguir en la web de recaptcha</td>
+                            </tr>
+                            <tr>
+                                <td>Recaptcha Secret</td><td><input type="ext" name="secret" value="<?=RECAPTCHA_SECRET;?>"/></td><td>También entregada por la web de recaptcha</td>
+                            </tr>
+                            <tr>
+                                <td>Captcha Registro</td><td><input type="checkbox" class="switchable" name="registro" <?php if(REQUIRE_REGISTRO_CAPTCHA){ ?>checked="checked"<?php } ?>/></td><td>Requerir captcha al registrarse</td>
+                            </tr>
+                            <tr>
+                                <td>Captcha Login</td><td><input type="checkbox" class="switchable" disabled="disabled" name="" <?php if(REQUIRE_LOGIN_CAPTCHA){ ?>checked="checked"<?php } ?>/></td><td>Requerir captcha después de x intentos fallidos</td>
+                            </tr>
+                            <tr>
+                                <td>Intentos antes de activar captcha</td><td><input type="ext" disabled="disabled" name="" value="<?=MAX_LOGIN_INTENT;?>"/></td><td>Intentos fallidos de acceso antes de incorporar el captcha al login</td>
+                            </tr>
+                            <tr>
+                                <td>Captcha al crear post</td><td><input type="checkbox" disabled="disabled" class="switchable" name="" <?php if(REQUIRE_POST_CAPTCHA_ALL){ ?>checked="checked"<?php } ?>/></td><td>Requerir captcha al tratar de crear un post (TODOS LOS RANGOS)</td>
+                            </tr>
+                            <tr>
+                                <td>FB APP ID</td><td><input type="text" name="fbappid" value="<?=FB_APPID;?>"/></td><td>Facebook APP id, para botones e integración</td>
+                            </tr>
+                            <tr>
+                                <td>FB SECRET</td><td><input type="ext" name="fbappsecret" value="<?=FB_APPSECRET;?>"/></td><td>Facebook APP Secret</td>
+                            </tr>
+                            <tr>
+                                <td>Twitter via</td><td><input type="ext" name="twitter" value="<?=TWITTER_VIA;?>"/></td><td>Compartir en twitter a travez de</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      <?php } ?>
+                      <hr />
+                      <input type="password" name="adminPass" placeholder="Global Kernell Password" /> <b>** OBLIGATORIO</b><button type="submit" class="btn btn-verde pull-right" style="display: inline-block;">Guardar</button>
+                    </div>
+                </div>
+                </form>
+              </div>
+            
+            </div>

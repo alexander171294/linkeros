@@ -1,0 +1,133 @@
+            </div>
+        <div id="footer_links"><a href="/terms">Terminos del servicio</a> - <a href="/protocolo">Protocolo</a> - <a href="/agradecimientos">Agradecimientos</a> - <a href="/security">Reporte de seguridad</a> - <a href="/sitemap.xml">Sitemap</a>{if="isset($me) && $me->id_rango == 2"} - <a href="/config">Configuraciones</a>{/if}<br \>
+        {if="SECCION_CATEGORIAS"}
+        <p style="margin: 10px;border: 1px solid white;border-radius: 5px;margin-bottom: 0px;">
+            <i class="fa fa-plus-square-o" id="categorySwitch" style="float: left;margin: 3.5px; cursor:pointer;" title="categorias"></i>
+                          {loop=$categorias as $key to $categoria}
+                              {if="$key>0"}- {/if}<a href="/categoria/{$categoria->id_categoria}/{$categoria->nombre_seo}" class="categoryFooterGroup">{$categoria->nombre_categoria}</a>
+                          {/loop}
+        </p>
+        {/if}
+
+        </div>
+        {if="SECCION_NOTAS_VERSION"}<div id="note_version"><a href="/version">Notas de la versión</a></div>{/if}
+        <div id="border_bot"></div>
+    </div>
+    <div id="copy_link">{%WEB_SITE%} &copy; 2016 - {#LASTYEAR#} | Powered by <b>Linkeros {#VERSION#}</b></div>
+    </body>
+    <!-- Bootstrap core CSS -->
+    <link href="{%theme_location%}css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{%theme_location%}css/taringa-v4.css" rel="stylesheet">
+    <!-- icons -->
+    <link href="{%theme_location%}css/icons.css" rel="stylesheet">
+    <!-- ranks -->
+    <link href="{%theme_location%}css/ranks.css" rel="stylesheet">
+    <!-- Category Icon List -->
+    <link href="{%theme_location%}css/catlist.css" rel="stylesheet">
+    <!-- emoticonos -->
+    <link href="{%theme_location%}css/emoticonos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster r-->
+    <!-- LOCAL HOST JQUERY -->
+    <script src="{%theme_location%}js/jquery-1.11.0.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="{%theme_location%}js/bootstrap.min.js"></script>
+    <!-- MODAL -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="{%theme_location%}js/core/varios.js"></script>
+    <script src="{%theme_location%}js/core/miniEditor.js"></script>
+    <!-- Without login -->
+    <div class="cortina hide"></div>
+    
+    {if="$section == 'posts'"}
+        <script src="{%theme_location%}js/core/buscadorHome.js"></script>
+    {/if}
+    {if="!$login"}
+        {import=otros/login}
+        {import=otros/registro}
+        <script src="{%theme_location%}js/core/login.js"></script>
+    {else}
+        {import=otros/alertas}
+        {import=otros/mp}
+        {if="_::$globals['fileController'] == 'posts'"}
+            {import=otros/report}
+        {/if}
+        {if="_::$globals['fileController'] == 'mensajes'"}
+            {import=otros/report_mps}
+        {/if}
+        {if="_::$globals['controller'] == 'ver_perfil'"}
+            {import=otros/report_users}
+        {/if}
+        <script src="{%theme_location%}js/core/mp.js"></script>
+        <script src="{%theme_location%}js/core/moderate.js"></script>
+        <script src="{%theme_location%}js/core/comments.js"></script>
+    {/if}
+    {if="_::$globals['fileController'] == 'edit_account'"}
+        <script src="{%theme_location%}js/core/avatar_manager.js"></script>
+    {/if}
+    {if="_::$globals['fileController'] == 'config'"}
+        <link href="{%theme_location%}/switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+        <script src="{%theme_location%}/switch/js/bootstrap-switch.min.js"></script>
+        <script>
+            $(".switchable").bootstrapSwitch();
+        </script>
+    {/if}
+    <script src="{%theme_location%}js/core/{%controller%}.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=ReCaptchaCallback&render=explicit" async defer></script>
+    <script>
+        var MaxLoginAttemp = {#MAX_LOGIN_INTENT#};
+        var LoginRecaptchaRender;
+        var RegistroRecaptchaRender;
+        var PostRecaptchaRender;
+        var ReCaptchaCallback = function() {
+            var grl = document.getElementById('g-recaptchaInLogin');
+            if (grl !== null) LoginRecaptchaRender = grecaptcha.render('g-recaptchaInLogin', {'sitekey' : '{#RECAPTCHA_KEY#}', 'size': 'compact'});
+            var grr = document.getElementById('g-recaptchaInRegistro');
+            if (grr !== null) RegistroRecaptchaRender = grecaptcha.render('g-recaptchaInRegistro', {'sitekey' : '{#RECAPTCHA_KEY#}'});
+            var grp = document.getElementById('g-recaptchaInPost');
+            if (grp !== null) PostRecaptchaRender = grecaptcha.render('g-recaptchaInPost', {'sitekey' : '{#RECAPTCHA_KEY#}'});
+        };
+        $('.categoryFooterGroup').hide();
+        $('#categorySwitch').click(function(){
+            $('.categoryFooterGroup').toggle();
+        });
+    </script>
+    {if="$section == 'posts' && $subsection == 'home' && HOME_NOTIFICACIONES"}
+        <script src="{%theme_location%}js/core/notificaciones.js"></script>
+    {/if}
+    {if="_::$globals['controller'] == 'ver_perfil' && $login && ($me->id_rango == 2 || $me->id_rango == 3)"}
+    <script src="{%theme_location%}js/core/modUsers.js"></script>
+    {/if}
+    <div id="fb-root"></div>
+    {if="_::$globals['controller'] == 'ver_post'"}
+    <script> FB_APP_ID = '{#FB_APPID#}'; </script>
+    <script src="{%theme_location%}js/core/social.js"></script>
+    {/if}
+    {import=otros/alertas}
+    
+    <script>
+        $('#loaderModal').fadeOut();
+    </script>
+    
+    <!-- Histats.com  START  (aync)-->
+    <script type="text/javascript">var _Hasync= _Hasync|| [];
+    _Hasync.push(['Histats.start', '1,3671556,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+    hs.src = ('//s10.histats.com/js15_as.js');
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();</script>
+    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?3671556&101" alt="estadisticas" border="0"></a></noscript>
+    <!-- Histats.com  END  -->
+    <!-- Without login -->
+</html>

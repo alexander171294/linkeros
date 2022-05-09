@@ -1,0 +1,42 @@
+<div class="row" id="mainContainerCatalog" data-cate="<?=$stat_cate;?>" data-idioma="<?=$stat_idioma;?>" data-calidad="<?=$stat_calidad;?>" data-pagina="<?=$stat_pagina;?>">
+    <div class="col-md-3">
+        <div class="panel panel-grey">
+            <div class="panel-heading panelImportantRecolor"><?=$categoria->nombre_categoria;?></div>
+            <div class="panel-body">
+                    <img src="<?=$objeto->foto;?>" alt="<?=$objeto->titulo;?>" itemprop="image">
+                    <label style="text-align: center;width: 100%;"><?=$objeto->titulo;?></label>
+                    <ul class="userstats">
+                      <li>
+                          <span id="user_followers"><?=$tempos;?></span>
+                          <strong>Temporadas</strong>
+                      </li>
+                      <li class="puntos">
+                          <span id="user_points"><?=$caps;?></span>
+                          <strong>Capitulos</strong>
+                      </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-grey">
+            <div class="panel-heading">Listado de capitulo</div>
+            <div class="panel-body" id="globalContentCatalog">
+                <?php if($temporadas){ ?>
+                    <?php foreach($temporadas as $nro => $capitulos){ ?>
+                    <h2>Temporada <?=$nro;?></h2>
+                    <ul class="catalogCapList">
+                        <?php foreach($capitulos as $unro => $post){ ?>
+                        <li><h3>x<?=$unro;?> - <a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><?=$post->titulo;?></a></h3></li>
+                        <?php } ?>
+                    </ul>
+                    <?php } ?>
+                <?php } else { ?>
+                    <b>Oh no!, este catalogo no tiene posts añadidos!</b>
+                    <br />
+                    Puedes utilizar el buscador (<a href="/buscador">aquí</a>), para encontrar un post y luego sugerirlo para esta lista.
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>

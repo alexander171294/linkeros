@@ -1,0 +1,37 @@
+<div class="row">
+    <?php if($reportPosts){ ?><div class="alert alert-iellow" role="alert"><i class="glyphicon glyphicon-exclamation-sign" style="color: rgb(174,173,143);padding-right: 5px;border-right: 1px solid rgb(208, 213, 119);"></i> <b>Aviso</b> Hay post esperando moderación...</div><?php } ?>
+    <div class="col-md-8">
+        <div class="panel panel-grey">
+            <div class="panel-heading">Bienvenido!</div>
+            <div class="panel-body">
+              Bienvenido <b><?=$me->nick;?></b> al panel de control de <?=_::$globals['WEB_SITE'];?>, desde aquí puedes controlar todo el contenido que necesita ser revisado, los usuarios bloqueados y otras cuestiones.<br />
+              Para apoyar el trabajo de los moderadores, el sistema automáticamente entrega puntos y aquellos moderadores con mayor cantidad de puntos se verán listados en la tabla de la derecha.<br />
+              Los puntos están reflejados en la siguiente imagen:<br />
+              <img src="/themes/default/images/help/moderacion.png" style="width:100%">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-grey">
+            <div class="panel-heading panelImportantRecolor">Mejores Moderadores (7 días)</div>
+            <table class="table">
+              <thead style="border-bottom: 1px solid rgb(191,191,191);">
+                <tr>
+                    <td>#</td>
+                    <td>Nick</td>
+                    <td>Puntos</td>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach($topMods as $key => $user){ ?>
+                <tr>
+                    <td><?=$key+=1;?></td>
+                    <td><a href="/usuario/<?=$user['uobject']->id_usuario;?>/<?=$user['uobject']->nick_seo;?>"><?=$user['uobject']->nick;?></a></td>
+                    <td><?=$user['puntos'];?></td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>

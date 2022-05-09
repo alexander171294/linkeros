@@ -1,0 +1,38 @@
+<!-- scripts del buscador -->
+        <script>
+          var opciones_opened = false;
+          $('#users').click(function(e){
+            $('.bigSearcher-background').addClass('users');
+            $('.bigSearcher-background').removeClass('open');
+            $('.bigSearcher-logo').addClass('users');
+            $('#postbutton').removeClass('active');
+            $('#usersbutton').addClass('active');
+            $('.big-searchbox').addClass('users');
+            $('#panelOptions').addClass('hide');
+            opciones_opened = false;
+            $('#opciones').hide();
+            e.preventDefault();
+          });
+          $('#post').click(function(e){
+            $('.bigSearcher-background').removeClass('users');
+            $('.bigSearcher-logo').removeClass('users');
+            $('#postbutton').addClass('active');
+            $('#usersbutton').removeClass('active');
+            $('.big-searchbox').removeClass('users');
+            $('#opciones').show();
+            e.preventDefault();
+          });
+          $('#opciones').click(function(){
+            if (opciones_opened)
+            {
+              $('#panelOptions').addClass('hide');
+              $('.bigSearcher-background').removeClass('open');
+            }
+            else
+            {
+              $('.bigSearcher-background').addClass('open');
+              $('#panelOptions').removeClass('hide');
+            }
+            opciones_opened = !opciones_opened;
+          });
+        </script>

@@ -1,0 +1,98 @@
+           
+            <div class="row">
+              
+              <div class="col-md-2">
+                <div class="panel panel-grey">
+                  <div class="panel-heading panelImportantRecolor">Filtrar</div>
+                  <div class="panel-body">
+                    <label>Categoría:</label>
+                    <select style="width:100%">
+                    <option value="0">Todas</option>
+                    <option value="9">Animaciones</option><option value="7">Arte</option><option value="25">Autos y motos</option><option value="20">Cómics</option><option value="19">Celulares</option><option value="34">Ciencia y educación</option><option value="18">Deportes</option><option value="11">Descargas</option><option value="17">Ecología</option><option value="5">Enlaces</option><option value="24">Femme</option><option value="4">Fotos e imágenes</option><option value="33">Hazlo tú mismo</option><option value="2">Homosexualidad reprimida</option><option value="26">Humor</option><option value="13">Información</option><option value="3">Juegos</option><option value="37">Juegos online</option><option value="1">Linux y GNU</option><option value="10">Música</option><option value="23">Mac</option><option value="32">Manga y Ánime</option><option value="30">Mascotas</option><option value="16">Monografías</option><option value="29">Negocias y economía</option><option value="12">Noticias</option><option value="8">Offtopic</option><option value="35">Paranormal</option><option value="15">Patrocinados</option><option value="22">Recetas y Cocina</option><option value="36">Reviews</option><option value="28">Salud y bienestar</option><option value="21">Solidaridad</option><option value="31">Turismo</option><option value="27">Tutoriales</option><option value="14">TV, Películas y Series</option><option value="6">Vídeos online</option>
+                    </select>
+                    <hr />
+                    <label>Período:</label>
+                    <ul class="periodo-ul">
+                      <li <?php if($topEspectro == 7){ ?>class="active"<?php } ?>><a href="/tops" style="<?php if($topEspectro == 7){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Todos los tiempos</a></li>
+                      <li <?php if($topEspectro == 1){ ?>class="active"<?php } ?>><a href="/top/hoy" style="<?php if($topEspectro == 1){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Hoy</a></li>
+                      <li <?php if($topEspectro == 2){ ?>class="active"<?php } ?>><a href="/top/ayer" style="<?php if($topEspectro == 2){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Ayer</a></li>
+                      <li <?php if($topEspectro == 3){ ?>class="active"<?php } ?>><a href="/top/semana" style="<?php if($topEspectro == 3){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Semana</a></li>
+                      <li <?php if($topEspectro == 4){ ?>class="active"<?php } ?>><a href="/top/mes" style="<?php if($topEspectro == 4){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Mes</a></li>
+                      <li <?php if($topEspectro == 5){ ?>class="active"<?php } ?>><a href="/top/mesanterior" style="<?php if($topEspectro == 5){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Mes anterior</a></li>
+                      <li <?php if($topEspectro == 6){ ?>class="active"<?php } ?>><a href="/top/anio" style="<?php if($topEspectro == 6){ ?>color:white;<?php } else { ?>color:#0f0fb4;<?php } ?> text-decoration: none;">Año</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Post con más puntos <i class="note-icons puntos right"></i></div>
+                  <div class="panel-body">
+                    <?php if(empty($xPuntos)){ ?>
+                      <div class="empty-data">No hay nada en este período</div>
+                    <?php } else { ?>
+                      <ol class="toplist-ol">
+                        <?php foreach($xPuntos as $post){ ?>
+                        <li><h3><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><div class="categoria <?=$post->o_categoria->foto_css;?>" style="height:25px"></div><?=$post->titulo;?></a></h3><span class="valor right"><?=$post->puntos;?></span></li>
+                        <?php } ?>
+                      </ol>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Post con más favoritos <i class="icon favoritos right"></i></div>
+                  <div class="panel-body">
+                    <?php if(empty($xFavoritos)){ ?>
+                      <div class="empty-data">No hay nada en este período</div>
+                    <?php } else { ?>
+                      <ol class="toplist-ol">
+                        <?php foreach($xFavoritos as $post){ ?>
+                        <li><h3><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><div class="categoria <?=$post->o_categoria->foto_css;?>" style="height:25px"></div><?=$post->titulo;?></a></h3><span class="valor right"><?=$post->favoritos;?></span></li>
+                        <?php } ?>
+                      </ol>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                  PUBLI!
+              </div>
+              <div class="col-md-5">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Post con más comentarios <i class="note-icons comentraios right"></i></div>
+                  <div class="panel-body">
+                    <?php if(empty($xComentarios)){ ?>
+                      <div class="empty-data">No hay nada en este período</div>
+                    <?php } else { ?>
+                      <ol class="toplist-ol">
+                        <?php foreach($xComentarios as $post){ ?>
+                        <li><h3><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><div class="categoria <?=$post->o_categoria->foto_css;?>" style="height:25px"></div><?=$post->titulo;?></a></h3><span class="valor right"><?=$post->comentarios;?></span></li>
+                        <?php } ?>
+                      </ol>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Post con más seguidores  <i class="icon seguidores right"></i></div>
+                  <div class="panel-body">
+                    <?php if(empty($xSeguidores)){ ?>
+                      <div class="empty-data">No hay nada en este período</div>
+                    <?php } else { ?>
+                      <ol class="toplist-ol">
+                        <?php foreach($xSeguidores as $post){ ?>
+                        <li><h3><a href="/posts/<?=$post->id_post;?>/<?=$post->o_categoria->nombre_seo;?>/<?=$post->titulo_seo;?>"><div class="categoria <?=$post->o_categoria->foto_css;?>" style="height:25px"></div><?=$post->titulo;?></a></h3><span class="valor right"><?=$post->seguidores;?></span></li>
+                        <?php } ?>
+                      </ol>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+            

@@ -1,0 +1,31 @@
+    <script type="text/javascript">
+       CONST_AUTOCOMPLETE_PARTIALS = {#AUTOCOMPLETE_PARTIALS#};
+    </script>
+    <!-- modal Alert -->
+    <div class="modalContent hide" id="modalMP">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-registro" id="panel-modalMP">
+            <div class="panel-heading"><i id="alertTitle">Enviar mensaje privado</i> <span class="right closeModal" data-modal="modalMP"><i class="fa fa-times-circle"></i></span></div>
+            <!-- primera instancia del registro -->
+            <div class="panel-body">
+                    <div class="alert alert-success hide" role="alert" id="mp_sended">Mensaje enviado</div>
+                    <div id="panelmpContent">
+                      <div class="alert alert-danger hide" role="alert" id="mp_error">...</div>
+                        <label>Para:</label>
+                        <input type="text" name="nick" id="mp_nick" style="width: 50%;" /><i class="icon spinner hide" id="mp_nick_spinner" style="margin-left: -25px;margin-right: 10px;margin-bottom: 3px;"></i> <div class="mpAclare">(ingrese el nick del usuario)</div>
+                      <p>
+                        <label>Asunto:</label>
+                        <input type="text" name="asunto" id="mp_asunto"/>
+                      </p>
+                      <p>
+                        <label>Mensaje:</label>
+                        <textarea name="mensaje" id="mp_mensaje"></textarea>
+                      </p>
+                    </div>
+                    <div class="separator" style="border-top: 1px dashed gray;"></div>
+                    <button type="button" class="btn btn-verde" id="mp_enviar" style="display: inline-block">Enviar</button>
+                    <button type="button" class="btn btn-gris" id="mp_cancelar" style="display: inline-block">Cancelar</button>
+            </div>
+        </div>
+      </div>
+    </div>

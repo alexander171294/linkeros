@@ -1,0 +1,75 @@
+            <div class="col-md-10">
+                <form method="post">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Moderación<i class="mpIcon viewed right"></i></div>
+                    <div class="panel-body">
+                        {if="isset($saved)"}
+                        <div class="no-comments-voidloop">
+                            Debes reabrir la ventana para que el nucleo del sistema cargue las nuevas constantes.
+                        </div>
+                        {else}
+                      <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Opcion</th>
+                                <th>Valor</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tour Puntos MP</td><td><input type="text" name="ptsMPs" value="{#TOUR_PUNTOS_MP#}"/></td><td>En el sistema de moderación, cuantos puntos dar al enviar un mp</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Puntos BORRAR</td><td><input type="text" name="ptsBorrar" value="{#TOUR_PUNTOS_BORRAR#}"/></td><td>En el sistema de moderación, cuantos puntos dar al borrar un post</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Puntos BORRADOR</td><td><input type="text" name="ptsBorrador" value="{#TOUR_PUNTOS_BORRADOR#}"/></td><td>En el sistema de moderación, cuantos puntos dar al mover post a borrador</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Puntos IGNORAR</td><td><input type="text" name="ptsIgnorar" value="{#TOUR_PUNTOS_IGNORAR#}"/></td><td>En el sistema de moderación, cuantos puntos dar al ignorar un reporte</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Puntos Bannear</td><td><input type="text" name="ptsBannear" value="{#TOUR_PUNTOS_BANNEAR#}"/></td><td>En el sistema de moderación, cuantos puntos dar al bannear un usuario</td>
+                            </tr>
+                            <tr>
+                                <td>Mostrar historial</td><td><input type="checkbox" class="switchable" name="history" {if="MOD_HISTORY_ADMIN"}checked="checked"{/if}/></td><td>Mostrar historial de moderación en el panel de control</td>
+                            </tr>
+                            <tr>
+                                <td>Mostrar IPTables</td><td><input type="checkbox" class="switchable" name="iptables" {if="IPTABLES_ADMIN"}checked="checked"{/if}/></td><td>Mostrar lista de ip banneadas en el panel de control</td>
+                            </tr>
+                            <tr>
+                                <td>Activar top mejores mods</td><td><input type="checkbox" class="switchable" name="topMejores" {if="MOD_TOP_MEJORES"}checked="checked"{/if}/></td><td>Activar el top de mejores moderadores</td>
+                            </tr>
+                            <tr>
+                                <td>Dias top</td><td><input type="text" name="DInTop" value="{#DIAS_TOP_MODERACION#}"/></td><td>Cuantos días abarcar en el top de mejores?</td>
+                            </tr>
+                            <tr>
+                                <td>Post en revisión</td><td><input type="checkbox" class="switchable" name="autoMod" {if="POST_AUTO_MODERAR"}checked="checked"{/if}/></td><td>Mover post a revisión por acumulación de denuncias</td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad de denuncias</td><td><input type="text" name="countDenuncias" value="{#POST_DENUNCIAS_REVISION#}"/></td><td>Antes de mover un post a revisión</td>
+                            </tr>
+                            <tr>
+                                <td>Ocultar comentarios</td><td><input type="text" name="negativosComments" value="{#COMMENTS_PUNTOS_NEGATIVOS_OCULTAR#}"/></td><td>Cantidad de votos negativos antes de ocultar un comentario</td>
+                            </tr>
+                            <tr>
+                                <td>Antiflood post</td><td><input type="text" name="antifloodPost" value="{#ANTIFLOOD_MAX_POST#}"/></td><td>Segundos minimos antes de publicar un segundo post</td>
+                            </tr>
+                            <tr>
+                                <td>Antiflood comentarios</td><td><input type="text" name="antifloodComment" value="{#ANTIFLOOD_MAX_COMMENT#}"/></td><td>Segundos minimos antes de publicar un segundo comentario</td>
+                            </tr>
+                            <tr>
+                                <td>Bloquear proxy</td><td><input type="checkbox" disabled="disabled" class="switchable" name="" {if="BLOCK_ALL_PROXY"}checked="checked"{/if}/></td><td>No permitir visitas a travez de proxy</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                      {/if}
+                    <hr />
+                      <input type="password" name="adminPass" placeholder="Global Kernell Password" /> <b>** OBLIGATORIO</b><button type="submit" class="btn btn-verde pull-right" style="display: inline-block;">Guardar</button>
+                    </div>
+                </div>
+                </form>
+              </div>
+            
+            </div>

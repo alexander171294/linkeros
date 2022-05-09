@@ -1,0 +1,45 @@
+           
+            
+              <div class="col-md-10">
+                <div class="panel panel-top">
+                  <div class="panel-heading">Lista de post en borradores</div>
+                  <?php if(empty($borradoresList)){ ?>
+                    <div class="panel-body">
+                      <div class="empty-data">No tienes borradores</div>
+                    </div>
+                    <?php } else { ?>
+                    <table class="table msglistUL">
+                      <thead>
+                        <tr>
+                          <td>#</td>
+                          <td>Nombre</td>
+                          <td>Fecha</td>
+                          <td>Administrar <button class="btn btn-azul btn-mini" id="vaciarBorradores" style="float:right;">Vaciar</button></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach($borradoresList as $borrador){ ?>
+                        <tr id="recordBorrador-<?=$borrador->id_post;?>">
+                          <td>
+                            <?=$borrador->id_post;?>
+                          </td>
+                          <td>
+                            <a href="/posts/<?=$borrador->id_post;?>/<?=$borrador->o_categoria->nombre_seo;?>/<?=$borrador->titulo_seo;?>"><?=$borrador->titulo;?></a>
+                          </td>
+                          <td>
+                            <?=$borrador->getFecha();?>
+                          </td>
+                          <td>
+                            <button class="btn btn-verde btn-mini publicarBorrador" data-target="<?=$borrador->id_post;?>">Publicar</button>
+                            <button class="btn btn-rojo btn-mini borrarBorrador" data-target="<?=$borrador->id_post;?>">Borrar</button>
+                          </td>
+                        </tr>
+                        <?php } ?>
+                      </tbody>
+                    </table>
+                    <?php } ?>
+                </div>
+              </div>
+              
+            </div>
+            

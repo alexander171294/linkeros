@@ -1,0 +1,7 @@
+modelo: security
+
+tablas: security, medals, user_medals
+
+ejecutar cron de asignación de medallas
+
+subir input vars

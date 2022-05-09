@@ -1,0 +1,77 @@
+            <!-- CONTENIDO -->
+            <div class="row" style="margin-top: 35px;margin-bottom: 65px;">
+			  <div class="bigSearcher-background"></div>
+              <div class="col-md-6 col-md-offset-3 blockSearchFixed" style="margin-top: -26px;">
+				<div class="bigSearcher-logo hidden-xs"></div>
+                  <ul class="nav nav-tabs nav-bigsearcher">
+                    <li role="presentation" class="active" id="postbutton"><a href="#" id="post">Posts</a></li>
+                    <li role="presentation" class="users" id="usersbutton"><a href="#" id="users">Users</a></li>
+										<li role="presentation" class="tags" id="tagsbutton"><a href="#" id="users">Tags</a></li>
+                  </ul>
+                  <div class="big-searchbox"><!-- users -->
+					<form method="post" action="" id="formBusquedaMain" style="display:none"></form>
+                    <div class="blockSearcher">
+                      <div class="Sleft"></div>
+                      <input type="text" name="q" id="textoBusquedaMain" value="{$searchText}"/>
+                      <div class="Sright"></div>
+                      <button type="button" class="btn btn-azul specialSearcher" id="realizarBusqueda" style="display:inline-block;">Buscar</button>
+                    </div>
+                    <div class="panel panel-options hide" id="panelOptions">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            Categoría:
+                            <select class="filterCategoria" style="width: 100%;" id="filtroCategoria">
+											<option value="-1" selected="selected" autocomplete="off">Todas</option>
+											{loop=$categorias as $categoria}
+												<option class="catl2 {$categoria->foto_css}" value="{$categoria->id_categoria}" data-id="{$categoria->id_categoria}" data-seo="{$categoria->nombre_seo}">{$categoria->nombre_categoria}</option>
+											{/loop}
+							</select>
+                          </div>
+                          <div class="col-md-6">
+                            Autor:
+                            <input type="text" name="autor" id="autor" placeholder="Nick del usuario..."/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="opciones hidden-xs hidden-sm" id="opciones">Opciones</div>
+                  </div>
+              </div>
+            </div>
+			{if="!empty($searchText)"}
+            <div class="row resultadoBusqueda {if="$searchType == 2"}green{/if}{if="$searchType == 3"}sky{/if}">
+			  <h1>Resultados de {if="$searchType == 1"}posts{/if}{if="$searchType == 2"}usuarios{/if}{if="$searchType == 3"}tags{/if}</h1>
+			  
+			  {if="$searchCantResult > 0"}
+				{if="$searchType == 2"}
+					<!-- ACÁ LISTA DE RESULTADOS -->
+					{loop=$searchResult as $usuario}
+					<div class="col-md-2 col-sm-4 search-vCard">
+					  <img src="{$usuario->avatar}" class="thumbnail"/>
+					  <a href="/usuario/{$usuario->id_usuario}/{$usuario->nick_seo}" class="nick">{$usuario->nick}</a>
+					</div>
+					{/loop}
+				{/if}
+				
+				{if="$searchType == 1"}
+				  <ul class="MainListPost">
+					  {loop=$searchResult as $post}
+					  <li><a href="/posts/{$post->id_post}/{$post->o_categoria->nombre_seo}/{$post->titulo_seo}"><span class="categoria {$post->o_categoria->foto_css}"></span> {$post->titulo}</a></li>
+					  {/loop}
+				  </ul>
+				{/if}
+				
+				{if="$searchType == 3"}
+				  <ul class="MainListPost">
+					  {loop=$searchResult as $tag}
+					  <li><a href="/tag/{$tag->id_tag}-{$tag->getSEO()}"><span class="icon tag"></span> {$tag->texto_tag}</a></li>
+					  {/loop}
+				  </ul>
+				{/if}
+			  {else}
+				  <div class="empty-data">No se encontraron resultados.</div>
+			  {/if}
+			</div>
+			{/if}
+			<script>var GPT_SEARCH_TYPE = {$searchBy};</script>
